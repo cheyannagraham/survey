@@ -26,11 +26,11 @@
                 </label>
 
                 <label id="email-label">* Email
-                    <input type="email" id="emaill" placeholder="johndoe@email.com" required>
+                    <input type="email" id="email" placeholder="johndoe@email.com" required>
                 </label>
                 
-                <label id="age-label">* Age
-                    <input type="number" id="age" min="5" max="100" placeholder="27" required>
+                <label id="number-label">* Age
+                    <input type="number" id="number" min="5" max="100" placeholder="27" required>
                 </label>
                 
                 <label id="experience-label"> Years Experience
@@ -42,15 +42,15 @@
                 <legend>What is your focus?</legend>
             
                 <label>Frontend  
-                    <input type="radio" name="focus" checked> 
+                    <input type="radio" value="Frontend" name="focus" checked> 
                 </label>
                 
                 <label>Backend  
-                    <input type="radio" name="focus"> 
+                    <input type="radio" value="Backend" name="focus"> 
                 </label>
                 
                 <label>Fullstack  
-                    <input type="radio" name="focus"> 
+                    <input type="radio" value="Fullstack" name="focus"> 
                 </label>
             </fieldset>
 
@@ -58,81 +58,83 @@
                 <legend>What's your tech stack?</legend>
             
                 <label> 
-                    <input type="checkbox" > React  
+                    <input type="checkbox" name="stack" value="react" > React  
                 </label>
                 
                 <label>  
-                    <input type="checkbox" > NodeJs 
+                    <input type="checkbox" name="stack" value="nodejs" > NodeJs 
                 </label>
                 
                 <label>  
-                    <input type="checkbox" > CSS3 
+                    <input type="checkbox" name="stack" value="css3" > CSS3 
                 </label>
                 
                 <label>  
-                    <input type="checkbox" > jQuery
+                    <input type="checkbox" name="stack" value="jquery" > JQuery
                 </label>
                 
                 <label>  
-                    <input type="checkbox" > PHP
+                    <input type="checkbox" name="stack" value="php" > PHP
                 </label>
                 
                 <label>  
-                    <input type="checkbox" > SQL
+                    <input type="checkbox" name="stack" value="sql" > SQL
                 </label>
                 
                 <label>  
-                    <input type="checkbox" > Postgress
+                    <input type="checkbox" name="stack" value="postgress" > Postgress
                 </label>
                 <label>  
-                    <input type="checkbox" > Python
+                    <input type="checkbox" name="stack" value="python" > Python
                 </label>
                 <label>  
-                    <input type="checkbox" > Javascript
+                    <input type="checkbox" name="stack" value="javascript" > Javascript
                 </label>
                 <label>  
-                    <input type="checkbox" > ES6
+                    <input type="checkbox" name="stack" value="es6" > ES6
                 </label>
                 <label>  
-                    <input type="checkbox" > MongoDB
+                    <input type="checkbox" name="stack" value="mongodb" > MongoDB
                 </label>
                 <label>  
-                    <input type="checkbox" > Ruby
+                    <input type="checkbox" name="stack" value="ruby" > Ruby
                 </label>
                 <label>  
-                    <input type="checkbox" > RubyonRails
+                    <input type="checkbox" name="stack" value="rubyrails" > RubyRails
                 </label>
                 <label>  
-                    <input type="checkbox" > Django
+                    <input type="checkbox" name="stack" value="django" > Django
                 </label>
                 <label>  
-                    <input type="checkbox" > Babel
+                    <input type="checkbox" name="stack" value="babel" > Babel
                 </label>
                 <label>  
-                    <input type="checkbox" > Webpack
+                    <input type="checkbox" name="stack" value="webpack" > Webpack
                 </label>
                 <label>  
-                    <input type="checkbox" > Grunt
+                    <input type="checkbox" name="stack" value="grunt" > Grunt
                 </label>
                 <label>  
-                    <input type="checkbox" > Gulp
+                    <input type="checkbox" name="stack" value="gulp" > Gulp
                 </label>
             </fieldset>
 
             <fieldset>
                 <legend>How did you learn how to code?</legend>
-                <select name="" id="dropdown">
-                    <option value="">Self Taught - Online</option>
-                    <option value="">Formal Education</option>
-                    <option value="">On the Job</option>
-                    <option value="">Bootcamp</option>
+                <select name="learn" id="dropdown">
+                    <option value="online">Self Taught - Online</option>
+                    <option value="college">Formal Education</option>
+                    <option value="otj">On the Job</option>
+                    <option value="bootcamp">Bootcamp</option>
                 </select>
             </fieldset>
             
             <fieldset>
                 <legend>Anything else?</legend>
-                <input type="textarea">
+                <textarea name="comments" id="" cols="30" rows="10"></textarea>
             </fieldset>
+
+            <button id="submit" type="submit">Submit</button>
             
 
 
