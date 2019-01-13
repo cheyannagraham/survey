@@ -2,160 +2,168 @@
 <html>
 
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Survey</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="./css/main.css" />
-    <script src="main.js"></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Survey</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" media="screen" href="./css/main.css" />
+	<script src="main.js"></script>
 
 </head>
 
 <body>
-    <header>
-        <h1 id="title">Developer Survey</h1>
-    </header>
+	<header>
+		<h1 id="title">Developer Survey</h1>
+	</header>
 
-    <hr>
+	<hr>
 
-    <main>
-        <p id="description">Describe your experience.</p>
-        <form action="" id="survey-form">
+	<main>
+		<p id="description">Describe your experience.</p>
+		<form action="" id="survey-form">
 
-            <fieldset>
-                <legend>Who are you?</legend>
-                <div class="input-section">
-                    <label class="right-label" id="name-label">* Name
+			<fieldset id="intro-fieldset">
+				<legend>Who are you?</legend>
 
-                    </label>
-                    <input class="left-input" type="text" id="name" placeholder="First Last" maxlength="50" required>
-                </div>
+				<div class="intro-div">
+					<label class="right-label" id="name-label"><small class="required">*</small> Name
 
-                <div class="input-section">
-                    <label class="right-label" id="email-label">* Email
+					</label>
+					<input class="left-input" type="text" id="name" placeholder="First Last" maxlength="50" required>
+				</div>
 
-                    </label>
-                    <input class="left-input" type="email" id="email" placeholder="johndoe@email.com" required>
-                </div>
+				<div class="intro-div">
+					<label class="right-label" id="email-label"><small class="required">*</small> Email
 
-                <div class="input-section">
-                    <label class="right-label" id="number-label">* Age
+					</label>
+					<input class="left-input" type="email" id="email" placeholder="johndoe@email.com" required>
+				</div>
 
-                    </label>
-                    <input class="left-input" type="number" id="number" min="5" max="100" placeholder="27" required>
-                </div>
+				<div class="intro-div">
+					<label class="right-label" id="number-label"><small class="required">*</small> Age
 
-                <div class="input-section">
-                    <label class="right-label" id="experience-label"> Years Experience
+					</label>
+					<input class="left-input" type="number" id="number" min="5" max="100" placeholder="27" required>
+				</div>
 
-                    </label>
-                    <input class="left-input" type="number" id="experience" min="0" max="70" placeholder="5" required>
-                </div>
-            </fieldset>
+				<div class="intro-div">
+					<label class="right-label" id="experience-label"> Years Experience
 
-            <fieldset>
-                <legend>What is your focus?</legend>
+					</label>
+					<input class="left-input" type="number" id="experience" min="0" max="70" placeholder="5" required>
+				</div>
+			</fieldset>
 
-                <label>Frontend
-                    <input type="radio" value="Frontend" name="focus" checked>
-                </label>
+			<fieldset id="focus-fieldset">
+				<legend>What is your focus?</legend>
 
-                <label>Backend
-                    <input type="radio" value="Backend" name="focus">
-                </label>
+				<div id="focus-div">
 
-                <label>Fullstack
-                    <input type="radio" value="Fullstack" name="focus">
-                </label>
-            </fieldset>
+					<label>Frontend
+						<input type="radio" value="Frontend" name="focus" checked>
+					</label>
 
-            <fieldset>
-                <legend>What's your tech stack?</legend>
+					<label>Backend
+						<input type="radio" value="Backend" name="focus">
+					</label>
 
-                <label>
-                    <input type="checkbox" name="stack" value="react"> React
-                </label>
+					<label>Fullstack
+						<input type="radio" value="Fullstack" name="focus">
+					</label>
+				</div>
+			</fieldset>
 
-                <label>
-                    <input type="checkbox" name="stack" value="nodejs"> NodeJs
-                </label>
+			<fieldset id="tech-stack-fieldset">
+				<legend>What's your tech stack?</legend>
 
-                <label>
-                    <input type="checkbox" name="stack" value="css3"> CSS3
-                </label>
+				<div id="tech-stack-div">
 
-                <label>
-                    <input type="checkbox" name="stack" value="jquery"> JQuery
-                </label>
-
-                <label>
-                    <input type="checkbox" name="stack" value="php"> PHP
-                </label>
-
-                <label>
-                    <input type="checkbox" name="stack" value="sql"> SQL
-                </label>
-
-                <label>
-                    <input type="checkbox" name="stack" value="postgress"> Postgress
-                </label>
-                <label>
-                    <input type="checkbox" name="stack" value="python"> Python
-                </label>
-                <label>
-                    <input type="checkbox" name="stack" value="javascript"> Javascript
-                </label>
-                <label>
-                    <input type="checkbox" name="stack" value="es6"> ES6
-                </label>
-                <label>
-                    <input type="checkbox" name="stack" value="mongodb"> MongoDB
-                </label>
-                <label>
-                    <input type="checkbox" name="stack" value="ruby"> Ruby
-                </label>
-                <label>
-                    <input type="checkbox" name="stack" value="rubyrails"> RubyRails
-                </label>
-                <label>
-                    <input type="checkbox" name="stack" value="django"> Django
-                </label>
-                <label>
-                    <input type="checkbox" name="stack" value="babel"> Babel
-                </label>
-                <label>
-                    <input type="checkbox" name="stack" value="webpack"> Webpack
-                </label>
-                <label>
-                    <input type="checkbox" name="stack" value="grunt"> Grunt
-                </label>
-                <label>
-                    <input type="checkbox" name="stack" value="gulp"> Gulp
-                </label>
-            </fieldset>
-
-            <fieldset>
-                <legend>How did you learn how to code?</legend>
-                <select name="learn" id="dropdown">
-                    <option value="online">Self Taught - Online</option>
-                    <option value="college">Formal Education</option>
-                    <option value="otj">On the Job</option>
-                    <option value="bootcamp">Bootcamp</option>
-                </select>
-            </fieldset>
-
-            <fieldset>
-                <legend>Anything else?</legend>
-                <textarea name="comments" id="" cols="30" rows="10"></textarea>
-            </fieldset>
-
-            <button id="submit" type="submit">Submit</button>
+					<label>
+						<input type="checkbox" name="tech-stack" value="react">React
+					</label>
 
 
+					<label>
+						<input type="checkbox" name="tech-stack" value="nodejs"> NodeJs
+					</label>
 
-        </form>
-    </main>
-    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+					<label>
+						<input type="checkbox" name="tech-stack" value="css3"> CSS3
+					</label>
+
+					<label>
+						<input type="checkbox" name="tech-stack" value="jquery"> JQuery
+					</label>
+
+					<label>
+						<input type="checkbox" name="tech-stack" value="php"> PHP
+					</label>
+
+					<label>
+						<input type="checkbox" name="tech-stack" value="sql"> SQL
+					</label>
+
+					<label>
+						<input type="checkbox" name="tech-stack" value="postgress"> Postgress
+					</label>
+					<label>
+						<input type="checkbox" name="tech-stack" value="python"> Python
+					</label>
+					<label>
+						<input type="checkbox" name="tech-stack" value="javascript"> Javascript
+					</label>
+					<label>
+						<input type="checkbox" name="tech-stack" value="es6"> ES6
+					</label>
+					<label>
+						<input type="checkbox" name="tech-stack" value="mongodb"> MongoDB
+					</label>
+					<label>
+						<input type="checkbox" name="tech-stack" value="ruby"> Ruby
+					</label>
+					<label>
+						<input type="checkbox" name="tech-stack" value="rubyrails"> RubyRails
+					</label>
+					<label>
+						<input type="checkbox" name="tech-stack" value="django"> Django
+					</label>
+					<label>
+						<input type="checkbox" name="tech-stack" value="babel"> Babel
+					</label>
+					<label>
+						<input type="checkbox" name="tech-stack" value="webpack"> Webpack
+					</label>
+					<label>
+						<input type="checkbox" name="tech-stack" value="grunt"> Grunt
+					</label>
+					<label>
+						<input type="checkbox" name="tech-stack" value="gulp"> Gulp
+					</label>
+				</div>
+			</fieldset>
+
+			<fieldset>
+				<legend>How did you learn how to code?</legend>
+				<select name="learn" id="dropdown">
+					<option value="online">Self Taught - Online</option>
+					<option value="college">Formal Education</option>
+					<option value="otj">On the Job</option>
+					<option value="bootcamp">Bootcamp</option>
+				</select>
+			</fieldset>
+
+			<fieldset>
+				<legend>Anything else?</legend>
+				<textarea name="comments" id="" cols="30" rows="10"></textarea>
+			</fieldset>
+
+			<button id="submit" type="submit">Submit</button>
+
+
+
+		</form>
+	</main>
+	<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 </body>
 
 </html>

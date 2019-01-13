@@ -30,7 +30,7 @@ fieldset {
     max-width: 630px;
 }
 
-.input-section {
+.intro-div {
     display: flex;
 }
 
@@ -75,4 +75,19 @@ textarea {
 #description {
     font-size: 1.4em;
     padding: 20px;
+}
+
+#focus-div {
+    text-align: center;
+}
+
+.required {
+    font-size: .6em;
+    vertical-align: top;
+}
+
+#tech-stack-div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
+    padding: 10px;
 }
