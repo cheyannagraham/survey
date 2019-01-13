@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,115 +8,129 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="./css/main.css" />
     <script src="main.js"></script>
-    
+
 </head>
+
 <body>
     <header>
-        <h1 id="title">Front End Web Developor Survey</h1>
+        <h1 id="title">Developer Survey</h1>
     </header>
+
+    <hr>
 
     <main>
         <p id="description">Describe your experience.</p>
         <form action="" id="survey-form">
-            
+
             <fieldset>
                 <legend>Who are you?</legend>
-            
-                <label id="name-label">* Name
-                    <input type="text" id="name" placeholder="First Last" maxlength="50" required>
-                </label>
+                <div class="input-section">
+                    <label class="right-label" id="name-label">* Name
 
-                <label id="email-label">* Email
-                    <input type="email" id="email" placeholder="johndoe@email.com" required>
-                </label>
-                
-                <label id="number-label">* Age
-                    <input type="number" id="number" min="5" max="100" placeholder="27" required>
-                </label>
-                
-                <label id="experience-label"> Years Experience
-                    <input type="number" id="experience" min="0" max="70" placeholder="5" required>
-                </label>
+                    </label>
+                    <input class="left-input" type="text" id="name" placeholder="First Last" maxlength="50" required>
+                </div>
+
+                <div class="input-section">
+                    <label class="right-label" id="email-label">* Email
+
+                    </label>
+                    <input class="left-input" type="email" id="email" placeholder="johndoe@email.com" required>
+                </div>
+
+                <div class="input-section">
+                    <label class="right-label" id="number-label">* Age
+
+                    </label>
+                    <input class="left-input" type="number" id="number" min="5" max="100" placeholder="27" required>
+                </div>
+
+                <div class="input-section">
+                    <label class="right-label" id="experience-label"> Years Experience
+
+                    </label>
+                    <input class="left-input" type="number" id="experience" min="0" max="70" placeholder="5" required>
+                </div>
             </fieldset>
 
             <fieldset>
                 <legend>What is your focus?</legend>
-            
-                <label>Frontend  
-                    <input type="radio" value="Frontend" name="focus" checked> 
+
+                <label>Frontend
+                    <input type="radio" value="Frontend" name="focus" checked>
                 </label>
-                
-                <label>Backend  
-                    <input type="radio" value="Backend" name="focus"> 
+
+                <label>Backend
+                    <input type="radio" value="Backend" name="focus">
                 </label>
-                
-                <label>Fullstack  
-                    <input type="radio" value="Fullstack" name="focus"> 
+
+                <label>Fullstack
+                    <input type="radio" value="Fullstack" name="focus">
                 </label>
             </fieldset>
 
             <fieldset>
                 <legend>What's your tech stack?</legend>
-            
-                <label> 
-                    <input type="checkbox" name="stack" value="react" > React  
+
+                <label>
+                    <input type="checkbox" name="stack" value="react"> React
                 </label>
-                
-                <label>  
-                    <input type="checkbox" name="stack" value="nodejs" > NodeJs 
+
+                <label>
+                    <input type="checkbox" name="stack" value="nodejs"> NodeJs
                 </label>
-                
-                <label>  
-                    <input type="checkbox" name="stack" value="css3" > CSS3 
+
+                <label>
+                    <input type="checkbox" name="stack" value="css3"> CSS3
                 </label>
-                
-                <label>  
-                    <input type="checkbox" name="stack" value="jquery" > JQuery
+
+                <label>
+                    <input type="checkbox" name="stack" value="jquery"> JQuery
                 </label>
-                
-                <label>  
-                    <input type="checkbox" name="stack" value="php" > PHP
+
+                <label>
+                    <input type="checkbox" name="stack" value="php"> PHP
                 </label>
-                
-                <label>  
-                    <input type="checkbox" name="stack" value="sql" > SQL
+
+                <label>
+                    <input type="checkbox" name="stack" value="sql"> SQL
                 </label>
-                
-                <label>  
-                    <input type="checkbox" name="stack" value="postgress" > Postgress
+
+                <label>
+                    <input type="checkbox" name="stack" value="postgress"> Postgress
                 </label>
-                <label>  
-                    <input type="checkbox" name="stack" value="python" > Python
+                <label>
+                    <input type="checkbox" name="stack" value="python"> Python
                 </label>
-                <label>  
-                    <input type="checkbox" name="stack" value="javascript" > Javascript
+                <label>
+                    <input type="checkbox" name="stack" value="javascript"> Javascript
                 </label>
-                <label>  
-                    <input type="checkbox" name="stack" value="es6" > ES6
+                <label>
+                    <input type="checkbox" name="stack" value="es6"> ES6
                 </label>
-                <label>  
-                    <input type="checkbox" name="stack" value="mongodb" > MongoDB
+                <label>
+                    <input type="checkbox" name="stack" value="mongodb"> MongoDB
                 </label>
-                <label>  
-                    <input type="checkbox" name="stack" value="ruby" > Ruby
+                <label>
+                    <input type="checkbox" name="stack" value="ruby"> Ruby
                 </label>
-                <label>  
-                    <input type="checkbox" name="stack" value="rubyrails" > RubyRails
+                <label>
+                    <input type="checkbox" name="stack" value="rubyrails"> RubyRails
                 </label>
-                <label>  
-                    <input type="checkbox" name="stack" value="django" > Django
+                <label>
+                    <input type="checkbox" name="stack" value="django"> Django
                 </label>
-                <label>  
-                    <input type="checkbox" name="stack" value="babel" > Babel
+                <label>
+                    <input type="checkbox" name="stack" value="babel"> Babel
                 </label>
-                <label>  
-                    <input type="checkbox" name="stack" value="webpack" > Webpack
+                <label>
+                    <input type="checkbox" name="stack" value="webpack"> Webpack
                 </label>
-                <label>  
-                    <input type="checkbox" name="stack" value="grunt" > Grunt
+                <label>
+                    <input type="checkbox" name="stack" value="grunt"> Grunt
                 </label>
-                <label>  
-                    <input type="checkbox" name="stack" value="gulp" > Gulp
+                <label>
+                    <input type="checkbox" name="stack" value="gulp"> Gulp
                 </label>
             </fieldset>
 
@@ -128,18 +143,19 @@
                     <option value="bootcamp">Bootcamp</option>
                 </select>
             </fieldset>
-            
+
             <fieldset>
                 <legend>Anything else?</legend>
                 <textarea name="comments" id="" cols="30" rows="10"></textarea>
             </fieldset>
 
             <button id="submit" type="submit">Submit</button>
-            
+
 
 
         </form>
     </main>
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 </body>
+
 </html>
