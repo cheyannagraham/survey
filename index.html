@@ -19,39 +19,41 @@
 	<hr>
 
 	<main>
-		<p id="description">Describe your experience.</p>
+		
 		<form action="" id="survey-form">
+			<p id="description">Describe your experience.</p>
 
 			<fieldset id="intro-fieldset">
 				<legend>Who are you?</legend>
 
 				<div class="intro-div">
-					<label class="right-label" id="name-label"><small class="required">*</small> Name
-
+					<label for="name" class="right-label" id="name-label">
+						<small class="required">*</small> Name
 					</label>
-					<input class="left-input" type="text" id="name" placeholder="First Last" maxlength="50" required>
+					<input class="left-input" type="text" id="name" placeholder="Foo Bar" maxlength="50" required>
 				</div>
 
 				<div class="intro-div">
-					<label class="right-label" id="email-label"><small class="required">*</small> Email
-
+					<label for="email" class="right-label" id="email-label">
+						<small class="required">*</small> Email
 					</label>
-					<input class="left-input" type="email" id="email" placeholder="johndoe@email.com" required>
+					<input class="left-input" type="email" id="email" placeholder="foobar@baz.com" required>
 				</div>
 
 				<div class="intro-div">
-					<label class="right-label" id="number-label"><small class="required">*</small> Age
-
+					<label for="number" class="right-label" id="number-label">
+						<small class="required">*</small> Age
 					</label>
 					<input class="left-input" type="number" id="number" min="5" max="100" placeholder="27" required>
 				</div>
 
 				<div class="intro-div">
-					<label class="right-label" id="experience-label"> Years Experience
-
+					<label for="experience" class="right-label" id="experience-label">
+						Years Experience
 					</label>
 					<input class="left-input" type="number" id="experience" min="0" max="70" placeholder="5" required>
 				</div>
+
 			</fieldset>
 
 			<fieldset id="focus-fieldset">
@@ -106,58 +108,75 @@
 					<label>
 						<input type="checkbox" name="tech-stack" value="postgress"> Postgress
 					</label>
+
 					<label>
 						<input type="checkbox" name="tech-stack" value="python"> Python
 					</label>
+
 					<label>
 						<input type="checkbox" name="tech-stack" value="javascript"> Javascript
 					</label>
+
 					<label>
 						<input type="checkbox" name="tech-stack" value="es6"> ES6
 					</label>
+
 					<label>
 						<input type="checkbox" name="tech-stack" value="mongodb"> MongoDB
 					</label>
+
 					<label>
 						<input type="checkbox" name="tech-stack" value="ruby"> Ruby
 					</label>
+
 					<label>
 						<input type="checkbox" name="tech-stack" value="rubyrails"> RubyRails
 					</label>
+
 					<label>
 						<input type="checkbox" name="tech-stack" value="django"> Django
 					</label>
+
 					<label>
 						<input type="checkbox" name="tech-stack" value="babel"> Babel
 					</label>
+
 					<label>
 						<input type="checkbox" name="tech-stack" value="webpack"> Webpack
 					</label>
+
 					<label>
 						<input type="checkbox" name="tech-stack" value="grunt"> Grunt
 					</label>
+
 					<label>
 						<input type="checkbox" name="tech-stack" value="gulp"> Gulp
 					</label>
 				</div>
 			</fieldset>
 
-			<fieldset>
+			<fieldset id="learn-fieldset">
 				<legend>How did you learn how to code?</legend>
-				<select name="learn" id="dropdown">
-					<option value="online">Self Taught - Online</option>
-					<option value="college">Formal Education</option>
-					<option value="otj">On the Job</option>
-					<option value="bootcamp">Bootcamp</option>
-				</select>
+
+				<div id="learn-div">
+					<select name="learn" id="dropdown">
+						<option value="online">Self Taught - Online</option>
+						<option value="college">College</option>
+						<option value="job">On the Job</option>
+						<option value="bootcamp">Bootcamp</option>
+					</select>
+				</div>
+
 			</fieldset>
 
 			<fieldset>
 				<legend>Anything else?</legend>
-				<textarea name="comments" id="" cols="30" rows="10"></textarea>
+				<textarea placeholder="Additional Comments" name="comments" id="" cols="30" rows="10"></textarea>
 			</fieldset>
 
 			<button id="submit" type="submit">Submit</button>
+
+		
 
 
 

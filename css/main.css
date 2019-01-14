@@ -5,33 +5,52 @@ body {
 header {
     text-align: center;
     padding: 10px;
-    border-radius: 5px;
-    /* box-shadow: 0px 3px 19px 0px gray; */
 }
 
-main {
-    width: 100%;
+hr {
+    border:none;
+    border-bottom: 5px dotted gray;
+    box-shadow: -1px 3px 8px 0px gray;
 }
 
 form {
-    width: 90%;
+    width: 95%;
     margin: auto;
+    max-width: 630px;
+}
+
+#description {
+    font-size: 1.4em;
+    padding: 5px;
+}
+
+fieldset {
+    margin: auto auto 50px auto;
+    border: 5px dotted gray;
+    border-radius: 5px;
+    box-shadow: 0px 3px 19px 0px gray;
+    padding: 10px;
+}
+
+legend {
+    background: white;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    font-size:1.2em;
 }
 
 label {
     padding: 10px;
 }
 
-fieldset {
-    margin: auto auto 20px auto;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0px 3px 19px 0px gray;
-    max-width: 630px;
-}
-
 .intro-div {
     display: flex;
+}
+
+.required {
+    font-size: .6em;
+    vertical-align: top;
 }
 
 .right-label{
@@ -43,20 +62,6 @@ fieldset {
     width: 50%;
 }
 
-legend {
-    background: white;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 5px;
-    font-size:1.2em;
-}
-
-button {
-    background: none;
-    cursor: pointer;
-    margin: auto;
-}
-
 input,select,button {
     padding: 10px;
     border-radius: 5px;
@@ -65,29 +70,29 @@ input,select,button {
     font-size:0.8em;
 }
 
+#tech-stack-div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px,1fr));
+    padding: 10px;
+}
+
+#learn-div, #focus-div {
+    text-align: center;
+} 
+
 textarea {
-    width: 100%;
+    width: 99%;
     border-radius: 5px;
     border: 2px solid gray;
     font-size:0.8em;
 }
 
-#description {
-    font-size: 1.4em;
-    padding: 20px;
-}
+#submit {
+    display: block;
+    background: none;
+    cursor: pointer;
+    padding: 15px;
+    margin:  0 auto 20px auto;
+    box-shadow: 0px 3px 19px 0px gray;
 
-#focus-div {
-    text-align: center;
-}
-
-.required {
-    font-size: .6em;
-    vertical-align: top;
-}
-
-#tech-stack-div {
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
-    padding: 10px;
 }
