@@ -1,16 +1,24 @@
 body {
     font: 1.2em Arial, sans-serif;
+    background:#D6D1B1;
+    font-weight: bold;
+    --text-color: #FE5F55;
+    --form-background:#C7EFCF;
+    --border:7px solid beige ;
+    --box-shadow: 0px 2.5px 5px -1px gray;
+    --border-radius: 8px;
+    color: var(--text-color);
 }
 
 header {
     text-align: center;
     padding: 10px;
-}
-
-hr {
-    border:none;
-    border-bottom: 5px dotted gray;
-    box-shadow: -1px 3px 8px 0px gray;
+    background: var(--form-background);
+    border-radius: var(--border-radius);
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+    max-width: 1200px;
+    margin: auto;
 }
 
 form {
@@ -26,22 +34,29 @@ form {
 
 fieldset {
     margin: auto auto 50px auto;
-    border: 5px dotted gray;
-    border-radius: 5px;
-    box-shadow: 0px 3px 19px 0px gray;
+    border: var(--border);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
     padding: 10px;
+    background: var(--form-background);
+}
+
+fieldset:hover {
+    transform: scale(1.05);
+    cursor: pointer;
 }
 
 legend {
-    background: white;
+    background: beige;
     padding: 10px;
     margin: 10px;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     font-size:1.2em;
 }
 
 label {
     padding: 10px;
+    cursor: pointer;
 }
 
 .intro-div {
@@ -64,7 +79,7 @@ label {
 
 input,select,button {
     padding: 10px;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     border: 2px solid gray;
     margin: 10px;
     font-size:0.8em;
@@ -82,17 +97,24 @@ input,select,button {
 
 textarea {
     width: 99%;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     border: 2px solid gray;
     font-size:0.8em;
 }
 
 #submit {
     display: block;
-    background: none;
+    background: var(--form-background);
+    border: var(--border);
+    color:var(--text-color);
+    font-weight: bold;
     cursor: pointer;
     padding: 15px;
     margin:  0 auto 20px auto;
-    box-shadow: 0px 3px 19px 0px gray;
+    box-shadow: var(--box-shadow);
+}
 
+#submit:hover {
+    transform: scale(1.05);
+    cursor: pointer;
 }
