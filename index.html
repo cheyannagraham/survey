@@ -17,7 +17,7 @@
 	</header>
 
 	<main>
-		
+
 		<form action="" id="survey-form">
 			<p id="description">Describe your experience.</p>
 
@@ -58,18 +58,21 @@
 				<legend>What is your focus?</legend>
 
 				<div id="focus-div">
+					<div class="focus-label">
+						<label for="frontend">Frontend</label>
+						<input type="radio" value="frontend" name="focus" checked>
+					</div>
 
-					<label>Frontend
-						<input type="radio" value="Frontend" name="focus" checked>
-					</label>
+					<div class="focus-label">
+						<label for="backend">Backend</label>
+						<input type="radio" value="backend" name="focus">
+					</div>
 
-					<label>Backend
-						<input type="radio" value="Backend" name="focus">
-					</label>
+					<div class="focus-label">
+						<label for="fullstack">Fullstack</label>
+						<input type="radio" value="fullstack" name="focus">
+					</div>
 
-					<label>Fullstack
-						<input type="radio" value="Fullstack" name="focus">
-					</label>
 				</div>
 			</fieldset>
 
@@ -174,7 +177,7 @@
 
 			<button id="submit" type="submit">Submit</button>
 
-		
+
 
 
 
@@ -184,3 +187,6 @@
 </body>
 
 </html>
+
+
+TODO: add submit functionality, and wrap intro container on smaller viewport

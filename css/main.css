@@ -91,9 +91,15 @@ input,select,button {
     padding: 10px;
 }
 
-#learn-div, #focus-div {
-    text-align: center;
+#focus-div {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 } 
+
+.focus-label {
+    padding: 10px;
+}
 
 textarea {
     width: 99%;
@@ -117,4 +123,23 @@ textarea {
 #submit:hover {
     transform: scale(1.05);
     cursor: pointer;
+}
+
+/* ==================MEDIA QUERY==================== */
+
+@media screen and (max-width: 400px) {
+    .intro-div {
+        flex-wrap: wrap;
+        margin: 10px;
+    }
+
+    .right-label {
+        text-align: left;
+    }
+
+    #focus-div {
+        justify-content: left;
+    }
+
+    
 }
