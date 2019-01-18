@@ -44,6 +44,8 @@ fieldset {
 fieldset:hover {
     transform: scale(1.05);
     cursor: pointer;
+    box-shadow: 2px 2.5px 15px -1px #FE5F55;
+
 }
 
 legend {
@@ -123,6 +125,8 @@ textarea {
 #submit:hover {
     transform: scale(1.05);
     cursor: pointer;
+    box-shadow: 2px 2.5px 15px -1px #FE5F55;
+
 }
 
 /* ==================MEDIA QUERY==================== */
