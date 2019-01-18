@@ -5,6 +5,8 @@ const addEvents = () => {
     form.addEventListener('submit',(e) => {
         e.preventDefault();
         getFormData();
+        form.reset();
+        document.getElementById('name').focus();
     });
 }
 
