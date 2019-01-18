@@ -1,5 +1,4 @@
-
-
+// add submit event and display form data to user
 const addEvents = () => {
     const form = document.getElementById("survey-form");
     form.addEventListener('submit',(e) => {
@@ -37,4 +36,5 @@ const formatFormData = formData => {
     alert(display);
 }
 
+//add events after the dom is ready
 document.addEventListener("DOMContentLoaded",addEvents);
