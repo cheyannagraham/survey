@@ -1,24 +1,18 @@
 body {
     font: 1.2em Arial, sans-serif;
-    background:#D6D1B1;
     font-weight: bold;
-    --text-color: #FE5F55;
-    --form-background:#C7EFCF;
-    --border:7px solid beige ;
-    --box-shadow: 0px 2.5px 5px -1px gray;
+    --text-color: black;
+    --border:none;
+    --box-shadow: 0px 2.5px 5px -1px black;
+    --hover-shadow: 2px 2.5px 15px -1px var(--text-color);
     --border-radius: 8px;
     color: var(--text-color);
+    text-align: center;
 }
 
 header {
-    text-align: center;
     padding: 10px;
-    background: var(--form-background);
-    border-radius: var(--border-radius);
-    border: var(--border);
-    box-shadow: var(--box-shadow);
-    max-width: 1200px;
-    margin: auto;
+    border-bottom: 4px solid var(--text-color);
 }
 
 form {
@@ -28,32 +22,31 @@ form {
 }
 
 #description {
-    font-size: 1.4em;
     padding: 5px;
 }
 
 fieldset {
-    margin: auto auto 50px auto;
+    margin-bottom: 50px;
     border: var(--border);
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     padding: 10px;
-    background: var(--form-background);
 }
 
 fieldset:hover {
     transform: scale(1.05);
     cursor: pointer;
-    box-shadow: 2px 2.5px 15px -1px #FE5F55;
+    box-shadow: var(--hover-shadow);
 
 }
 
 legend {
-    background: beige;
-    padding: 10px;
-    margin: 10px;
-    border-radius: var(--border-radius);
-    font-size:1.2em;
+    background: white;
+    padding: 15px;
+    margin: 15px;
+    font-size:1.3em;
+    text-align: left;
+    border: var(--border);
 }
 
 label {
@@ -89,6 +82,7 @@ input,select,button {
 
 #tech-stack-div {
     display: grid;
+    text-align: left;
     grid-template-columns: repeat(auto-fill, minmax(150px,1fr));
     padding: 10px;
 }
@@ -112,7 +106,7 @@ textarea {
 
 #submit {
     display: block;
-    background: var(--form-background);
+    background: none;
     border: var(--border);
     color:var(--text-color);
     font-weight: bold;
@@ -125,7 +119,7 @@ textarea {
 #submit:hover {
     transform: scale(1.05);
     cursor: pointer;
-    box-shadow: 2px 2.5px 15px -1px #FE5F55;
+    box-shadow: var(--hover-shadow);
 }
 
 /* ==================MEDIA QUERY==================== */
