@@ -11,12 +11,18 @@ const addEvents = () => {
 
 const change_form_content = (next_button) => {
     const next = document.querySelector('fieldset[data-next]').getAttribute('data-next');
-    
-    // Submit form on last page*** NO SUBMIT ACTION YET
-    if(next == '5') {
-        next_button.innerHTML = 'Submit'
+
+    // Submit form
+    if (next == 'end') {
+        alert("end");
     }
-    update_form_view(next);
+    else {
+        // Submit form on last page*** NO SUBMIT ACTION YET
+        if(next == '5') {
+            next_button.innerHTML = 'Submit'
+        }
+        update_form_view(next);
+    }
 }
 
 const update_form_view = (form) => {
@@ -30,3 +36,5 @@ const update_form_view = (form) => {
 
 //add events after the dom is ready
 document.addEventListener('DOMContentLoaded', main);
+
+// DONT FORGET TO SANITIZE TEXT!!!
