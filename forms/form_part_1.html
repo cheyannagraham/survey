@@ -1,0 +1,32 @@
+<fieldset id="intro-fieldset">
+    <legend>Who are you?</legend>
+
+    <div class="intro-div">
+        <label for="name" class="right-label" id="name-label">
+            <small class="required">*</small> Name
+        </label>
+        <input name="name" class="left-input" type="text" id="name" pattern="\w+\s+\w+" title="Please enter a first and last name" placeholder="Foo Bar" maxlength="50" required>
+    </div>
+
+    <div class="intro-div">
+        <label for="email" class="right-label" id="email-label">
+            <small class="required">*</small> Email
+        </label>
+        <input name="email" class="left-input" type="email" id="email" placeholder="foobar@baz.com" required>
+    </div>
+
+    <div class="intro-div">
+        <label for="number" class="right-label" id="number-label">
+            <small class="required">*</small> Age
+        </label>
+        <input name="age" class="left-input" type="number" id="number" min="5" max="100" placeholder="27" required>
+    </div>
+
+    <div class="intro-div">
+        <label for="experience" class="right-label" id="experience-label">
+            <small class="required">*</small> Years Experience
+        </label>
+        <input name="xp" class="left-input" type="number" id="experience" min="0" max="70" placeholder="5" required>
+    </div>
+
+</fieldset>
