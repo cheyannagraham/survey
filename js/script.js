@@ -5,23 +5,30 @@ const main = () => {
 }
 
 const addEvents = () => {
+    let prev_button = document.getElementById('prev');
+    prev_button.addEventListener('click', () => {
+        const prev = document.querySelector('fieldset[data-prev]').getAttribute('data-prev');
+        change_form_content(prev, prev_button);
+    });
+    
     let next_button = document.getElementById('next');
-    next_button.addEventListener('click', () => change_form_content(next_button));
+    next_button.addEventListener('click', () => {
+        const next = document.querySelector('fieldset[data-next]').getAttribute('data-next');
+        change_form_content(next, next_button);
+    });
 }
 
-const change_form_content = (next_button) => {
-    const next = document.querySelector('fieldset[data-next]').getAttribute('data-next');
+const change_form_content = (form, next_button) => {
 
     // Submit form
-    if (next == 'end') {
+    if (form == 'end') {
         alert("end");
     }
+    else if (form == 'beg') {
+        alert('beg');
+    }
     else {
-        // Submit form on last page*** NO SUBMIT ACTION YET
-        if(next == '5') {
-            next_button.innerHTML = 'Submit'
-        }
-        update_form_view(next);
+        update_form_view(form);
     }
 }
 
