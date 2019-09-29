@@ -38,6 +38,25 @@ const update_form_view = (form) => {
     .then(resp => {
         const form_content = document.getElementById('form-content');
         form_content.innerHTML = resp;
+        const prev = document.querySelector('fieldset[data-prev]').getAttribute('data-prev');
+        const next = document.querySelector('fieldset[data-next]').getAttribute('data-next');
+        const prev_button = document.getElementById('prev');
+        const next_button = document.getElementById('next');
+        
+        // Hide prev button at beg of form only
+        if (prev == 'beg') {
+            prev_button.style.display = 'none';
+        }
+        else {
+            prev_button.style.display = 'inline';
+        }
+        // Show submit on last page of form only
+        if (next == 'end') {
+            next_button.innerHTML = 'Submit';
+        }
+        else {
+            next_button.innerHTML = 'Next';
+        }
     });
 }
 

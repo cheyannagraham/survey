@@ -121,6 +121,11 @@ textarea {
     box-shadow: var(--hover-shadow);
 }
 
+/* hide on initial load */
+#prev {
+    display: none;
+}
+
 /* ==================MEDIA QUERY==================== */
 
 @media screen and (max-width: 400px) {
