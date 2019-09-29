@@ -33,13 +33,6 @@ fieldset {
     padding: 10px;
 }
 
-fieldset:hover {
-    transform: scale(1.05);
-    cursor: pointer;
-    box-shadow: var(--hover-shadow);
-
-}
-
 legend {
     background: white;
     padding: 15px;

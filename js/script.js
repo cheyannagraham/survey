@@ -8,24 +8,21 @@ const addEvents = () => {
     let prev_button = document.getElementById('prev');
     prev_button.addEventListener('click', () => {
         const prev = document.querySelector('fieldset[data-prev]').getAttribute('data-prev');
-        change_form_content(prev, prev_button);
+        change_form_content(prev);
     });
     
     let next_button = document.getElementById('next');
     next_button.addEventListener('click', () => {
         const next = document.querySelector('fieldset[data-next]').getAttribute('data-next');
-        change_form_content(next, next_button);
+        change_form_content(next);
     });
 }
 
-const change_form_content = (form, next_button) => {
+const change_form_content = (form) => {
 
     // Submit form
     if (form == 'end') {
         alert("end");
-    }
-    else if (form == 'beg') {
-        alert('beg');
     }
     else {
         update_form_view(form);
@@ -43,7 +40,7 @@ const update_form_view = (form) => {
         const prev_button = document.getElementById('prev');
         const next_button = document.getElementById('next');
         
-        // Hide prev button at beg of form only
+        // Hide prev button at beg of form onlyclear
         if (prev == 'beg') {
             prev_button.style.display = 'none';
         }
