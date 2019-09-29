@@ -104,7 +104,7 @@ textarea {
     font-size:0.8em;
 }
 
-#submit {
+#next {
     display: block;
     background: none;
     border: var(--border);
@@ -116,7 +116,7 @@ textarea {
     box-shadow: var(--box-shadow);
 }
 
-#submit:hover {
+#next:hover {
     transform: scale(1.05);
     cursor: pointer;
     box-shadow: var(--hover-shadow);
