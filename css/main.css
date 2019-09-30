@@ -98,7 +98,7 @@ textarea {
 }
 
 
-#next, #prev {
+#next, #prev, #submit {
     background: none;
     border: var(--border);
     color:var(--text-color);
@@ -108,14 +108,14 @@ textarea {
     box-shadow: var(--box-shadow);
 }
 
-#next:hover, #prev:hover {
+#next:hover, #prev:hover, #submit:hover {
     transform: scale(1.05);
     cursor: pointer;
     box-shadow: var(--hover-shadow);
 }
 
 /* hide on initial load */
-#prev {
+#prev, #submit {
     display: none;
 }
 
