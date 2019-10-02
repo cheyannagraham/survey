@@ -58,7 +58,6 @@ const isValid = (e) => {
 
   }
   else {
-
     let stepValid = true;
     const formContent = document.getElementById('form-content');
     const stepItems = formContent.querySelectorAll('input[required');
