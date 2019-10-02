@@ -48,11 +48,12 @@ const isValid = (e) => {
   if (e) {
     elem = e.target;
     if (!elem.checkValidity()) {
-      elem.classList.add("invalid");
+      elem.reportValidity();
+      elem.classList.add('invalid');
       return false;
     }
     else {
-      elem.classList.remove("invalid");
+      elem.classList.remove('invalid');
       return true;
     }
 
@@ -63,7 +64,8 @@ const isValid = (e) => {
     const stepItems = formContent.querySelectorAll('input[required');
     stepItems.forEach(elem => {
       if (!elem.checkValidity()) {
-        elem.classList.add("invalid");
+        elem.reportValidity();
+        elem.classList.add('invalid');
         stepValid = false;
       }
       else {
