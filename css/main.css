@@ -21,6 +21,10 @@ form {
     max-width: 630px;
 }
 
+.invalid {
+    border: 3px solid red;
+}
+
 #description {
     padding: 5px;
 }

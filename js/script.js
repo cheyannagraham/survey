@@ -42,13 +42,18 @@ const addEvents = () => {
 };
 
 const isValid = () => {
+  alert("ivalid");
   let stepValid = true;
   const formContent = document.getElementById('form-content');
   const stepItems = formContent.querySelectorAll('input[required');
   console.log(stepItems);
   stepItems.forEach(elem => {
     if (!elem.checkValidity()) {
+      elem.classList.add("invalid");
       stepValid = false;
+    }
+    else {
+      elem.classList.remove('invalid');
     }
   })
     return stepValid;
