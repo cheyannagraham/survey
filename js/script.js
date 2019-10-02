@@ -35,28 +35,44 @@ const addEvents = () => {
   form = document.getElementById('survey-form');
   form.addEventListener('submit', e => {
     e.preventDefault();
-
-    isValid && formSubmit(form);
+    isValid() && formSubmit(form);
   });
-  form.addEventListener('change', saveFormContent);
+
+  form.addEventListener('change', e => {
+    saveFormContent(e);
+    isValid(e);
+  });
 };
 
-const isValid = () => {
-  alert("ivalid");
-  let stepValid = true;
-  const formContent = document.getElementById('form-content');
-  const stepItems = formContent.querySelectorAll('input[required');
-  console.log(stepItems);
-  stepItems.forEach(elem => {
+const isValid = (e) => {
+  if (e) {
+    elem = e.target;
     if (!elem.checkValidity()) {
       elem.classList.add("invalid");
-      stepValid = false;
+      return false;
     }
     else {
-      elem.classList.remove('invalid');
+      elem.classList.remove("invalid");
+      return true;
     }
-  })
+
+  }
+  else {
+
+    let stepValid = true;
+    const formContent = document.getElementById('form-content');
+    const stepItems = formContent.querySelectorAll('input[required');
+    stepItems.forEach(elem => {
+      if (!elem.checkValidity()) {
+        elem.classList.add("invalid");
+        stepValid = false;
+      }
+      else {
+        elem.classList.remove('invalid');
+      }
+    })
     return stepValid;
+  }
 }
 
 const getForms = () => {
