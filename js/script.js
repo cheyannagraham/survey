@@ -58,11 +58,37 @@ const isValid = e => {
 	}
 	// Validate all step elements
 	else {
-		let stepValid = true;
 		const formContent = document.getElementById("form-content");
-		// Validate checkboxes
-
-		const stepItems = formContent.querySelectorAll("input[required], select");
+		
+		// Validate all checkbox groups
+		const checkboxes = formContent.querySelectorAll('input[type=checkbox]');
+		checkbox_groups_names = new Set([]);
+		checkboxes.forEach(box => {
+			checkbox_groups_names.add(box.name);
+		});
+		console.log(checkbox_groups_names)
+		if (checkbox_groups_names.length > 0) {
+			let valid_groups = [];
+			checkbox_groups_names.forEach((idx,name) => {
+				valid_groups[idx] = false;
+				const boxes = formContent.querySelectorAll(`input[name=[${name}]`);
+				boxes.some(box => {
+					if (box.checked = true) {
+						valid_groups[idx] = true;
+						return true;
+					}
+				})
+			});
+			
+			if (valid_groups.includes('false')) {
+				
+				return false;
+			}
+		}
+		
+		// Validate select & required
+		let stepValid = true;
+		const stepItems = formContent.querySelectorAll("input[required], select[required]");
 		stepItems.forEach(elem => {
 			if (!elem.checkValidity()) {
 				elem.reportValidity();
