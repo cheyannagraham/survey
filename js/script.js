@@ -60,7 +60,9 @@ const isValid = e => {
 	else {
 		let stepValid = true;
 		const formContent = document.getElementById("form-content");
-		const stepItems = formContent.querySelectorAll("input[required");
+		// Validate checkboxes
+
+		const stepItems = formContent.querySelectorAll("input[required], select");
 		stepItems.forEach(elem => {
 			if (!elem.checkValidity()) {
 				elem.reportValidity();
@@ -172,3 +174,5 @@ document.addEventListener("DOMContentLoaded", main);
 // HTML Validation NOT WORKING BC
 // TODO: Save form state
 // CHECK for globals in loops >(
+	// enter submits form!!
+	// require textarea, select,  
