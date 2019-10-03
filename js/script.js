@@ -38,8 +38,7 @@ const addEvents = () => {
 	});
 
 	form.addEventListener("change", e => {
-		saveFormContent(e);
-		isValid(e);
+		isValid(e) && saveFormContent(e);
 	});
 };
 
