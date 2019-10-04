@@ -25,6 +25,11 @@ form {
     border: 3px solid red;
 }
 
+.error {
+    background: red;
+    color: white;
+}
+
 #description {
     padding: 5px;
 }
