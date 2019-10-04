@@ -82,7 +82,7 @@ const isValid = e => {
 
 		// Validate select & required
 		let stepValid = true;
-		const stepItems = formContent.querySelectorAll("input[required], select[required]");
+		const stepItems = formContent.querySelectorAll("input[required], select[required], textarea[required");
 		stepItems.forEach(elem => {
 			if (!elem.checkValidity()) {
 				elem.reportValidity();
