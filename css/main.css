@@ -107,7 +107,7 @@ textarea {
 }
 
 
-#next, #prev, #submit {
+#next-btn, #prev-btn, #submit-btn {
     background: none;
     border: var(--border);
     color:var(--text-color);
@@ -117,14 +117,14 @@ textarea {
     box-shadow: var(--box-shadow);
 }
 
-#next:hover, #prev:hover, #submit:hover {
+#next-btn:hover, #prev-btn:hover, #submit-btn:hover {
     transform: scale(1.05);
     cursor: pointer;
     box-shadow: var(--hover-shadow);
 }
 
 /* hide on initial load */
-#prev, #submit {
+#prev-btn, #submit-btn {
     display: none;
 }
 
