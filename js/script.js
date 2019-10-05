@@ -3,11 +3,11 @@ const formValues = {};
 
 const main = () => {
 	addEvents(formValues);
-	getForms().then(res => {
-		formParts = res;
-		// Get first part of form
-		updateFormView(0);
-	});
+	// getForms().then(res => {
+	// 	formParts = res;
+	// 	// Get first part of form
+	// 	updateFormView(0);
+	// });
 };
 
 const addEvents = () => {
@@ -96,24 +96,24 @@ const isValid = e => {
 	}
 };
 
-const getForms = () => {
-	const getData = n => {
-		return fetch(`./forms/form_part_${n}.html`)
-			.then(resp => resp.text())
-			.then(html => {
-				return html;
-			});
-	};
+// const getForms = () => {
+// 	const getData = n => {
+// 		return fetch(`./forms/form_part_${n}.html`)
+// 			.then(resp => resp.text())
+// 			.then(html => {
+// 				return html;
+// 			});
+// 	};
 
-	return Promise.all([
-		getData(0),
-		getData(1),
-		getData(2),
-		getData(3),
-		getData(4),
-		getData(5)
-	]).then(forms => forms);
-};
+// 	return Promise.all([
+// 		getData(0),
+// 		getData(1),
+// 		getData(2),
+// 		getData(3),
+// 		getData(4),
+// 		getData(5)
+// 	]).then(forms => forms);
+// };
 
 const saveFormContent = e => {
 	elem = e.target;

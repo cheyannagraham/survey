@@ -6,25 +6,202 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Survey</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" media="screen" href="./css/main.css" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" media="screen" href="./css/styles.css" />
 </head>
 
-<body>
+<body class="container">
 	<header>
-		<h1 id="title">Developer Survey</h1>
+		<h1 class="display-1">Developer Survey</h1>
 	</header>
+	<hr>
 
 	<main>
-		<form id="survey-form" method="POST">
+		<form id="survey-form" class="form" method="POST">
 			<p id="description"><em>Describe your experience.</em></p>
 			<div id="error" class="error"></div>
 
-			<div id="form-content"></div>
-			
+			<div id="form-content">
+			</div>
+
+			<div class="form-step">
+				<fieldset data-prev="beg" data-current="0" data-next="1">
+					<legend>Who are you?</legend>
+
+					<div class="form-group">
+						<label for="name" class="right-label" id="name-label">
+							Name <small class="required">*</small>
+						</label>
+						<input class="form-control" name="name" autofocus class="left-input" type="text" id="name"
+							pattern="\w+\s+\w+" title="Please enter a first and last name" placeholder="First Last"
+							maxlength="50" required>
+					</div>
+
+					<div class="form-group">
+						<label for="email" class="right-label" id="email-label">
+							Email <small class="required">*</small>
+						</label>
+						<input class="form-control" name="email" class="left-input" type="email" id="email"
+							placeholder="foobar@baz.com" required>
+					</div>
+
+					<div class="form-group">
+						<label for="age" class="right-label" id="age-label">
+							Age <small class="required">*</small>
+						</label>
+						<input class="form-control" name="age" class="left-input" type="number"
+							title="Please enter age between 3 and 110" id="age" min="3" max="150" placeholder="27"
+							required>
+					</div>
+
+					<div class="form-group">
+						<label for="experience" class="right-label" id="experience-label">
+							Years Experience <small class="required">*</small>
+						</label>
+						<input class="form-control" name="xp" class="left-input" type="number" id="experience" min="0"
+							max="70" placeholder="5" required>
+					</div>
+
+				</fieldset>
+			</div>
+
+			<div class="form-step">
+				<fieldset id="focus-fieldset" data-prev="0" data-current="1" data-next="2">
+					<legend>What is your focus?</legend>
+
+					<div id="focus-div">
+						<div class="focus-label">
+							<label for="frontend">Frontend</label>
+							<input id="frontend" type="radio" value="frontend" name="focus" required checked>
+						</div>
+
+						<div class="focus-label">
+							<label for="backend">Backend</label>
+							<input id="backend" type="radio" value="backend" name="focus" required>
+						</div>
+
+						<div class="focus-label">
+							<label for="fullstack">Fullstack</label>
+							<input id="fullstack" type="radio" value="fullstack" name="focus" required>
+						</div>
+
+					</div>
+				</fieldset>
+			</div>
+			<div class="form-step">
+				<fieldset id="tech-stack-fieldset" data-prev="1" data-current="2" data-next="3">
+					<legend>What's your tech stack?</legend>
+
+					<div id="tech-stack-div">
+
+						<label>
+							<input type="checkbox" name="tech-stack" value="react">React
+						</label>
+
+
+						<label>
+							<input type="checkbox" name="tech-stack" value="nodejs"> NodeJs
+						</label>
+
+						<label>
+							<input type="checkbox" name="tech-stack" value="css3"> CSS3
+						</label>
+
+						<label>
+							<input type="checkbox" name="tech-stack" value="jquery"> JQuery
+						</label>
+
+						<label>
+							<input type="checkbox" name="tech-stack" value="php"> PHP
+						</label>
+
+						<label>
+							<input type="checkbox" name="tech-stack" value="sql"> SQL
+						</label>
+
+						<label>
+							<input type="checkbox" name="tech-stack" value="postgress"> Postgress
+						</label>
+
+						<label>
+							<input type="checkbox" name="tech-stack" value="python"> Python
+						</label>
+
+						<label>
+							<input type="checkbox" name="tech-stack" value="javascript"> Javascript
+						</label>
+
+						<label>
+							<input type="checkbox" name="tech-stack" value="es6"> ES6
+						</label>
+
+						<label>
+							<input type="checkbox" name="tech-stack" value="mongodb"> MongoDB
+						</label>
+
+						<label>
+							<input type="checkbox" name="tech-stack" value="ruby"> Ruby
+						</label>
+
+						<label>
+							<input type="checkbox" name="tech-stack" value="rubyrails"> RubyRails
+						</label>
+
+						<label>
+							<input type="checkbox" name="tech-stack" value="django"> Django
+						</label>
+
+						<label>
+							<input type="checkbox" name="tech-stack" value="babel"> Babel
+						</label>
+
+						<label>
+							<input type="checkbox" name="tech-stack" value="webpack"> Webpack
+						</label>
+
+						<label>
+							<input type="checkbox" name="tech-stack" value="grunt"> Grunt
+						</label>
+
+						<label>
+							<input type="checkbox" name="tech-stack" value="gulp"> Gulp
+						</label>
+					</div>
+				</fieldset>
+			</div>
+			<div class="form-step">
+				<fieldset id="learn-fieldset" data-prev="2" data-current="3" data-next="4">
+					<legend>How did you learn how to code?</legend>
+
+					<div id="learn-div">
+						<select name="learn" id="learn" required>
+							<option value="">Select One</option>
+							<option value="online">Self Taught - Online</option>
+							<option value="college">College</option>
+							<option value="job">On the Job</option>
+							<option value="bootcamp">Bootcamp</option>
+						</select>
+					</div>
+
+				</fieldset>
+			</div>
+			<div class="form-step">
+				<fieldset data-prev="3" data-current="4" data-next="end">
+					<legend>Anything else?</legend>
+					<textarea placeholder="Additional Comments" name="comments" id="comments" cols="30" rows="10"
+						required></textarea>
+				</fieldset>
+			</div>
+			<div class="form-step">
+				<h3>Form Complete</h3>
+				<p>Thank You</p>
+			</div>
+
 			<div id="form-control-button-div">
-				<button id="prev-btn" type="button">Prev</button>
-				<button id="next-btn" type="button">Next</button>
-				<button id="submit-btn" type="submit">Submit</button>
+				<button id="prev-btn" class="btn btn-secondary" type="button">Prev</button>
+				<button id="next-btn" class="btn btn-primary" type="button">Next</button>
+				<button id="submit-btn" class="btn btn-primary" type="submit">Submit</button>
 			</div>
 		</form>
 	</main>
