@@ -22,10 +22,7 @@
 			<p id="description"><em>Describe your experience.</em></p>
 			<div id="error" class="error"></div>
 
-			<div id="form-content">
-			</div>
-
-			<div class="form-step">
+			<div class="form-step show" data-position="beg">
 				<fieldset data-prev="beg" data-current="0" data-next="1">
 					<legend>Who are you?</legend>
 
@@ -66,8 +63,8 @@
 				</fieldset>
 			</div>
 
-			<div class="form-step">
-				<fieldset id="focus-fieldset" data-prev="0" data-current="1" data-next="2">
+			<div class="form-step" >
+				<fieldset id="focus-fieldset" >
 					<legend>What is your focus?</legend>
 
 					<div id="focus-div">
@@ -89,8 +86,9 @@
 					</div>
 				</fieldset>
 			</div>
+			
 			<div class="form-step">
-				<fieldset id="tech-stack-fieldset" data-prev="1" data-current="2" data-next="3">
+				<fieldset id="tech-stack-fieldset">
 					<legend>What's your tech stack?</legend>
 
 					<div id="tech-stack-div">
@@ -170,8 +168,9 @@
 					</div>
 				</fieldset>
 			</div>
+			
 			<div class="form-step">
-				<fieldset id="learn-fieldset" data-prev="2" data-current="3" data-next="4">
+				<fieldset id="learn-fieldset">
 					<legend>How did you learn how to code?</legend>
 
 					<div id="learn-div">
@@ -186,8 +185,9 @@
 
 				</fieldset>
 			</div>
-			<div class="form-step">
-				<fieldset data-prev="3" data-current="4" data-next="end">
+			
+			<div class="form-step" data-position="end">
+				<fieldset>
 					<legend>Anything else?</legend>
 					<textarea placeholder="Additional Comments" name="comments" id="comments" cols="30" rows="10"
 						required></textarea>
