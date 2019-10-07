@@ -9,7 +9,6 @@ const addEvents = () => {
 	const prevBtn = document.getElementById("prev-btn");
 	prevBtn.addEventListener("click", () => {
 		if (isValid()) {
-			// const prev = document.querySelector("fieldset[data-prev]").getAttribute("data-prev");
 			changeStep("prev");
 		}
 	});
@@ -17,7 +16,6 @@ const addEvents = () => {
 	const nextBtn = document.getElementById("next-btn");
 	nextBtn.addEventListener("click", () => {
 		if (isValid()) {
-			// const next = document.querySelector("fieldset[data-next]").getAttribute("data-next");
 			changeStep("next");
 		}
 	});
@@ -34,7 +32,10 @@ const addEvents = () => {
 };
 
 const isValid = e => {
-	return true;
+	// Validate current step
+	return (!Object.values(document.querySelectorAll('.show *[required]')).some(elem => elem.checkValidity() == false));
+
+
 	// Validate onchange element
 	// if (e) {
 	// 	elem = e.target;
@@ -161,8 +162,8 @@ const changeStep = direction => {
 	
 	current_step.classList.remove("show");
 	moveTo.classList.add("show");
-	console.log(moveTo.getAttribute("data-position") == "beg");
 
+	// Hide and show next, submit, prev buttons
 	if (moveTo.getAttribute("data-position") != "beg") {
 		document.getElementById('prev-btn').style.display = 'inline';
 	}
@@ -190,8 +191,5 @@ const formSubmit = () => {
 document.addEventListener("DOMContentLoaded", main);
 
 // DONT FORGET TO SANITIZE TEXT!!!
-// HTML Validation NOT WORKING BC
-// TODO: Save form state
-// CHECK for globals in loops >(
-// enter submits form!!
-// require textarea, select,
+//validate visible form step only. 
+

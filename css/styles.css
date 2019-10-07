@@ -1,11 +1,7 @@
-.form-step {
+.form-step, #prev-btn, #submit-btn {
     display: none;
 }
 
 .show {
     display: inline;
-}
-
-#prev-btn, #submit-btn {
-    display: none;
 }
