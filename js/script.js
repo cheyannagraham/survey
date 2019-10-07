@@ -30,11 +30,18 @@ const addEvents = () => {
 };
 
 const isValid = e => {
+	// validate onchange
+	if (e && e.target.checkValidity()) {
+		return e.target.reportValidity();
+	}
 	// Validate current step
-	return (!Object.values(document.querySelectorAll('.show *[required]')).some(elem => {
-		elem.reportValidity();
-		return elem.checkValidity() == false;
-		}));
+	return (!Object.values(document.querySelectorAll('.show *[required]'))
+	.some(elem => {
+		if (!elem.checkValidity()) {
+			elem.reportValidity();
+			return true;
+		}
+	}));
 
 
 	// Validate onchange element
