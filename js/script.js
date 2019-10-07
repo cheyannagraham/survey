@@ -8,9 +8,7 @@ const main = () => {
 const addEvents = () => {
 	const prevBtn = document.getElementById("prev-btn");
 	prevBtn.addEventListener("click", () => {
-		if (isValid()) {
 			changeStep("prev");
-		}
 	});
 
 	const nextBtn = document.getElementById("next-btn");
