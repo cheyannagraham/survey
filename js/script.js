@@ -176,13 +176,19 @@ const changeStep = direction => {
 		document.getElementById('submit-btn').style.display = 'none';
 		document.getElementById('next-btn').style.display = 'inline';
 	}
+	if (moveTo.getAttribute('data-position') == 'finish') {
+		document.getElementById('prev-btn').style.display = 'none';
+		document.getElementById('submit-btn').style.display = 'none';
+		document.getElementById('next-btn').style.display = 'none';
+	}
 };
 
 const formSubmit = () => {
-	const formContent = document.getElementById("form-content");
-	formContent.innerHTML = formParts[5];
-	document.getElementById("prev-btn").style.display = "none";
-	document.getElementById("submit-btn").style.display = "none";
+	changeStep('next');
+	// const formContent = document.getElementById("form-content");
+	// formContent.innerHTML = formParts[5];
+	// document.getElementById("prev-btn").style.display = "none";
+	// document.getElementById("submit-btn").style.display = "none";
 };
 
 //add events after the dom is ready
