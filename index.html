@@ -13,7 +13,7 @@
 
 <body class="container">
 	<header>
-		<h1 class="display-1">Developer Survey</h1>
+		<h1 id="title" class="display-1">Developer Survey</h1>
 	</header>
 	<hr>
 
@@ -44,11 +44,11 @@
 					</div>
 
 					<div class="form-group">
-						<label for="age" class="right-label" id="age-label">
+						<label for="number" class="right-label" id="number-label">
 							Age <small class="required">*</small>
 						</label>
 						<input class="form-control" name="age" class="left-input" type="number"
-							title="Please enter age between 3 and 110" id="age" min="3" max="150" placeholder="27"
+							title="Please enter age between 3 and 110" id="number" min="3" max="150" placeholder="27"
 							required>
 					</div>
 
@@ -174,7 +174,7 @@
 					<legend>How did you learn how to code?</legend>
 
 					<div id="learn-div">
-						<select name="learn" id="learn" required>
+						<select name="learn" id="dropdown" required>
 							<option value="">Select One</option>
 							<option value="online">Self Taught - Online</option>
 							<option value="college">College</option>
@@ -202,11 +202,11 @@
 			<div id="form-control-button-div">
 				<button id="prev-btn" class="btn btn-secondary" type="button">Prev</button>
 				<button id="next-btn" class="btn btn-primary" type="button">Next</button>
-				<button id="submit-btn" class="btn btn-primary" type="submit">Submit</button>
+				<button id="submit" class="btn btn-primary" type="submit">Submit</button>
 			</div>
 		</form>
 	</main>
-	<!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
+	<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 	<script defer src="./js/script.js"></script>
 </body>
 
