@@ -1,8 +1,8 @@
-let formParts = [];
-const formValues = {};
+// let formParts = [];
+// const formValues = {};
 
 const main = () => {
-	addEvents(formValues);
+	addEvents();
 };
 
 const addEvents = () => {
@@ -193,8 +193,24 @@ const changeStep = direction => {
 	}
 };
 
-const formSubmit = () => {
+const formSubmit = (form) => {
 	changeStep('next');
+	const formValues = JSON.stringify({
+		name : form.querySelector("#name").value,
+		email : form.querySelector("#email").value,
+		age : form.querySelector("#age").value,
+		experience : form.querySelector("#experience").value,
+		focus : Object.values(form.querySelectorAll("input[name=focus]")).filter(elem => elem.checked)[0].value,
+		'tech-stack' : Object.values(form.querySelectorAll("input[name=tech-stack]")).filter(elem => elem.checked).map(elem => elem.value),
+		learn : form.querySelector("#learn").value,
+		comments : form.querySelector("#comments").value,
+	});
+	localStorage.setItem()
+	console.log(formValues);
+	// Object.values(form.elements).forEach(elem => console.log(elem.name, elem.value));
+	// form.elements
+	
+	// console.log(serialize(document.forms('survey-form')));
 	// const formContent = document.getElementById("form-content");
 	// formContent.innerHTML = formParts[5];
 	// document.getElementById("prev-btn").style.display = "none";
@@ -205,5 +221,6 @@ const formSubmit = () => {
 document.addEventListener("DOMContentLoaded", main);
 
 // DONT FORGET TO SANITIZE TEXT!!!
-//validate visible form step only. 
+// retrieve and do something with values
+// prevent values from being empty strings
 
