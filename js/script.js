@@ -1,5 +1,6 @@
 const main = () => {
 	addEvents();
+	// showResults();
 };
 
 const addEvents = () => {
@@ -63,11 +64,6 @@ const changeStep = direction => {
 		document.getElementById('submit').style.display = 'none';
 		document.getElementById('next-btn').style.display = 'inline';
 	}
-	if (moveTo.getAttribute('data-position') == 'finish') {
-		document.getElementById('prev-btn').style.display = 'none';
-		document.getElementById('submit').style.display = 'none';
-		document.getElementById('next-btn').style.display = 'none';
-	}
 };
 
 const formSubmit = (form) => {
@@ -100,12 +96,42 @@ const saveFormValues = (formValues) => {
 
 const showResults = () => {
 	const formResults = JSON.parse(localStorage.getItem("survey-form-results"));
+	let table = `
+	<table>
+		<thead>
+			<th>Name</th>
+			<th>Experience</th>
+			<th>Skills</th>
+			<th>Contact</th>
+			<th>Comments</th>
+		</thead>
+		<tbody>`;
+
+	for (result of formResults) {
+		table += `
+			<tr>
+				<td>${result.name}</td>
+				<td>${result.focus}</td>
+				<td>${result["tech-stack"]}</td>
+				<td>${result.email}</td>
+				<td>${result.comments}</td>
+			</tr>`
+	}
+	table += `
+		</tbody>
+	</table>`;
+
+	document.querySelector("#main").innerHTML = table;
 
 }
+
 
 //add events after the dom is ready
 document.addEventListener("DOMContentLoaded", main);
 
 // DONT FORGET TO SANITIZE TEXT!!!
 // prevent values from being empty strings
+// test with out JS
+// remove finish step
+//style
 
