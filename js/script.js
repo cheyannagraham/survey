@@ -1,6 +1,14 @@
 const main = () => {
+	// https://flaviocopes.com/how-to-uppercase-first-letter-javascript/
+	String.prototype.capitalize = function() {
+		return this.charAt(0).toUpperCase() + this.slice(1);
+	}
+
+	Array.prototype.toCapList = function() {
+		return this.map(item => item.capitalize()).join(', ');
+	}
 	addEvents();
-	// showResults();
+	showResults();
 };
 
 const addEvents = () => {
@@ -97,29 +105,32 @@ const saveFormValues = (formValues) => {
 const showResults = () => {
 	const formResults = JSON.parse(localStorage.getItem("survey-form-results"));
 	let table = `
-	<table>
-		<thead>
-			<th>Name</th>
-			<th>Experience</th>
-			<th>Skills</th>
-			<th>Contact</th>
-			<th>Comments</th>
-		</thead>
-		<tbody>`;
+	<div class="table-responsive">
+		<table class="table table-striped table-bordered">
+			<thead class="thead-light">
+				<th>Name</th>
+				<th>Experience</th>
+				<th>Skills</th>
+				<th>Contact</th>
+				<th>Comments</th>
+			</thead>
+			<tbody>`;
 
-	for (result of formResults) {
+	for (result of formResults)
+	{
 		table += `
 			<tr>
-				<td>${result.name}</td>
-				<td>${result.focus}</td>
-				<td>${result["tech-stack"]}</td>
-				<td>${result.email}</td>
-				<td>${result.comments}</td>
+				<td>${(result.name).split(" ").toCapList()}</td>
+				<td>${(result.focus).capitalize()}</td>
+				<td>${(result["tech-stack"]).toCapList()}</td>
+				<td>${(result.email).capitalize()}</td>
+				<td>${(result.comments).capitalize()}</td>
 			</tr>`
 	}
 	table += `
-		</tbody>
-	</table>`;
+			</tbody>
+		</table>
+	</div>`;
 
 	document.querySelector("#main").innerHTML = table;
 
@@ -132,6 +143,5 @@ document.addEventListener("DOMContentLoaded", main);
 // DONT FORGET TO SANITIZE TEXT!!!
 // prevent values from being empty strings
 // test with out JS
-// remove finish step
-//style
+//style text in table
 
