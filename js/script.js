@@ -8,7 +8,6 @@ const main = () => {
 		return this.map(item => item.capitalize()).join(', ');
 	}
 	addEvents();
-	showResults();
 };
 
 const addEvents = () => {
@@ -144,4 +143,5 @@ document.addEventListener("DOMContentLoaded", main);
 // prevent values from being empty strings
 // test with out JS
 //style text in table
+// add navbar to table and form
 

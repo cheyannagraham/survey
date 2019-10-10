@@ -27,155 +27,170 @@
 					<legend>Who are you?</legend>
 
 					<div class="form-group">
-						<label for="name" class="right-label" id="name-label">
+						<label for="name" id="name-label">
 							Name <small class="required">*</small>
 						</label>
-						<input class="form-control" name="name" autofocus class="left-input" type="text" id="name"
-							pattern="\w+\s+\w+" title="Please enter a first and last name" placeholder="First Last"
-							maxlength="50" required>
+						<input class="form-control" name="name" autofocus class="left-input" type="text" id="name" pattern="\w+\s+\w+" title="Please enter a first and last name" ariadescribedby="name-helper"
+							placeholder="First Last" maxlength="50" required>
+						<span id="name-helper" class="form-text text-muted">
+							<small>Please enter a first and last name</small>
+						</span>
 					</div>
 
 					<div class="form-group">
-						<label for="email" class="right-label" id="email-label">
+						<label for="email" id="email-label">
 							Email <small class="required">*</small>
 						</label>
-						<input class="form-control" name="email" class="left-input" type="email" id="email"
-							placeholder="foobar@baz.com" required>
+						<input class="form-control" name="email" class="left-input" type="email" id="email" placeholder="foobar@baz.com" required>
 					</div>
 
 					<div class="form-group">
-						<label for="number" class="right-label" id="number-label">
+						<label for="number" id="number-label">
 							Age <small class="required">*</small>
 						</label>
-						<input class="form-control" name="age" class="left-input" type="number"
-							title="Please enter age between 3 and 110" id="number" min="3" max="150" placeholder="27"
-							required>
+						<input class="form-control" name="age" class="left-input" type="number" title="Please enter age between 3 and 110" id="number" min="3" max="150" placeholder="27" required>
 					</div>
 
 					<div class="form-group">
-						<label for="experience" class="right-label" id="experience-label">
+						<label for="experience" id="experience-label">
 							Years Experience <small class="required">*</small>
 						</label>
-						<input class="form-control" name="xp" class="left-input" type="number" id="experience" min="0"
-							max="70" placeholder="5" required>
+						<input class="form-control" name="xp" class="left-input" type="number" id="experience" min="0" max="70" placeholder="5" required>
 					</div>
 
 				</fieldset>
 			</div>
 
-			<div class="form-step" >
-				<fieldset id="focus-fieldset" >
+			<div class="form-step show">
+				<fieldset id="focus-fieldset">
 					<legend>What is your focus?</legend>
 
 					<div id="focus-div">
-						<div class="focus-label">
-							<label for="frontend">Frontend</label>
-							<input id="frontend" type="radio" value="frontend" name="focus" required checked>
+						<div class="focus-label form-check">
+							<input class="form-check-input" id="frontend" type="radio" value="frontend" name="focus" required checked>
+							<label class="form-check-label" for="frontend">Frontend</label>
 						</div>
 
-						<div class="focus-label">
-							<label for="backend">Backend</label>
-							<input id="backend" type="radio" value="backend" name="focus" required>
+						<div class="focus-label form-check">
+							<input class="form-check-input" id="backend" type="radio" value="backend" name="focus" required>
+							<label class="form-check-label" for="backend">Backend</label>
 						</div>
 
-						<div class="focus-label">
-							<label for="fullstack">Fullstack</label>
-							<input id="fullstack" type="radio" value="fullstack" name="focus" required>
+						<div class="focus-label form-check">
+							<input class="form-check-input" id="fullstack" type="radio" value="fullstack" name="focus" required>
+							<label class="form-check-label" for="fullstack">Fullstack</label>
 						</div>
-
 					</div>
 				</fieldset>
 			</div>
-			
-			<div class="form-step">
+
+			<div class="form-step show">
 				<fieldset id="tech-stack-fieldset">
 					<legend>What's your tech stack?</legend>
 
 					<div id="tech-stack-div">
 
-						<label>
-							<input type="checkbox" name="tech-stack" value="react">React
-						</label>
+						<div class="form-check">
+							<input id="react" class="form-check-input" type="checkbox" name="tech-stack" value="react">
+							<label for="react" class="form-check-label">React</label>
+						</div>
 
 
-						<label>
-							<input type="checkbox" name="tech-stack" value="nodejs"> NodeJs
-						</label>
+						<div class="form-check">
+							<input id="nodejs" class="form-check-input" type="checkbox" name="tech-stack" value="nodejs">
+							<label for="nodejs" class="form-check-label">NodeJs</label>
+						</div>
 
-						<label>
-							<input type="checkbox" name="tech-stack" value="css3"> CSS3
-						</label>
+						<div class="form-check">
+							<input id="css3" class="form-check-input" type="checkbox" name="tech-stack" value="css3">
+							<label for="css3" class="form-check-label">CSS3</label>
+						</div>
 
-						<label>
-							<input type="checkbox" name="tech-stack" value="jquery"> JQuery
-						</label>
+						<div class="form-check">
+							<input id="jquery" class="form-check-input" type="checkbox" name="tech-stack" value="jquery">
+							<label for="jquery" class="form-check-label">JQuery</label>
+						</div>
 
-						<label>
-							<input type="checkbox" name="tech-stack" value="php"> PHP
-						</label>
+						<div class="form-check">
+							<input id="php" class="form-check-input" type="checkbox" name="tech-stack" value="php">
+							<label for="php" class="form-check-label">PHP</label>
+						</div>
 
-						<label>
-							<input type="checkbox" name="tech-stack" value="sql"> SQL
-						</label>
+						<div class="form-check">
+							<input id="sql" class="form-check-input" type="checkbox" name="tech-stack" value="sql">
+							<label for="sql" class="form-check-label">SQL</label>
+						</div>
 
-						<label>
-							<input type="checkbox" name="tech-stack" value="postgress"> Postgress
-						</label>
+						<div class="form-check">
+							<input id="postgress" class="form-check-input" type="checkbox" name="tech-stack" value="postgress">
+							<label for="postgress" class="form-check-label">Postgress</label>
+						</div>
 
-						<label>
-							<input type="checkbox" name="tech-stack" value="python"> Python
-						</label>
+						<div class="form-check">
+							<input id="python" class="form-check-input" type="checkbox" name="tech-stack" value="python">
+							<label for="python" class="form-check-label">Python</label>
+						</div>
 
-						<label>
-							<input type="checkbox" name="tech-stack" value="javascript"> Javascript
-						</label>
+						<div class="form-check">
+							<input id="javascript" class="form-check-input" type="checkbox" name="tech-stack" value="javascript">
+							<label for="javascript" class="form-check-label">Javascript</label>
+						</div>
 
-						<label>
-							<input type="checkbox" name="tech-stack" value="es6"> ES6
-						</label>
+						<div class="form-check">
+							<input id="es6" class="form-check-input" type="checkbox" name="tech-stack" value="es6">
+							<label for="es6" class="form-check-label">ES6</label>
+						</div>
 
-						<label>
-							<input type="checkbox" name="tech-stack" value="mongodb"> MongoDB
-						</label>
+						<div class="form-check">
+							<input id="mongodb" class="form-check-input" type="checkbox" name="tech-stack" value="mongodb">
+							<label for="mongodb" class="form-check-label">MongoDB</label>
+						</div>
 
-						<label>
-							<input type="checkbox" name="tech-stack" value="ruby"> Ruby
-						</label>
+						<div class="form-check">
+							<input id="ruby" class="form-check-input" type="checkbox" name="tech-stack" value="ruby">
+							<label for="ruby" class="form-check-label">Ruby</label>
+						</div>
 
-						<label>
-							<input type="checkbox" name="tech-stack" value="rubyrails"> RubyRails
-						</label>
+						<div class="form-check">
+							<input id="rubyrails" class="form-check-input" type="checkbox" name="tech-stack" value="rubyrails">
+							<label for="rubyrails" class="form-check-label">RubyRails</label>
+						</div>
 
-						<label>
-							<input type="checkbox" name="tech-stack" value="django"> Django
-						</label>
+						<div class="form-check">
+							<input id="django" class="form-check-input" type="checkbox" name="tech-stack" value="django">
+							<label for="django" class="form-check-label">Django</label>
+						</div>
 
-						<label>
-							<input type="checkbox" name="tech-stack" value="babel"> Babel
-						</label>
+						<div class="form-check">
+							<input id="babel" class="form-check-input" type="checkbox" name="tech-stack" value="babel">
+							<label for="babel" class="form-check-label">Babel</label>
+						</div>
 
-						<label>
-							<input type="checkbox" name="tech-stack" value="webpack"> Webpack
-						</label>
+						<div class="form-check">
+							<input id="webpack" class="form-check-input" type="checkbox" name="tech-stack" value="webpack">
+							<label for="webpack" class="form-check-label">Webpack</label>
+						</div>
 
-						<label>
-							<input type="checkbox" name="tech-stack" value="grunt"> Grunt
-						</label>
+						<div class="form-check">
+							<input id="grunt" class="form-check-input" type="checkbox" name="tech-stack" value="grunt">
+							<label for="grunt" class="form-check-label">Grunt</label>
+						</div>
 
-						<label>
-							<input type="checkbox" name="tech-stack" value="gulp"> Gulp
-						</label>
+						<div class="form-check">
+							<input id="gulp" class="form-check-input" type="checkbox" name="tech-stack" value="gulp">
+							<label for="gulp" class="form-check-label">Gulp</label>
+						</div>
 					</div>
 				</fieldset>
 			</div>
-			
-			<div class="form-step">
+
+			<div class="form-step show">
 				<fieldset id="learn-fieldset">
 					<legend>How did you learn how to code?</legend>
 
-					<div id="learn-div">
-						<select name="learn" id="dropdown" required>
-							<option value="">Select One</option>
+					<div class="form-group" id="learn-div">
+						<select class="form-control" name="learn" id="dropdown" required>
+							<option value=""">Select One</option>
 							<option value="online">Self Taught - Online</option>
 							<option value="college">College</option>
 							<option value="job">On the Job</option>
@@ -185,15 +200,14 @@
 
 				</fieldset>
 			</div>
-			
-			<div class="form-step" data-position="end">
+
+			<div class="form-step show show" data-position="end">
 				<fieldset>
 					<legend>Anything else?</legend>
-					<textarea placeholder="Additional Comments" name="comments" id="comments" cols="30" rows="10"
-						required></textarea>
+					<textarea class="form-control" placeholder="Additional Comments" name="comments" id="comments" cols="30" rows="10" required></textarea>
 				</fieldset>
 			</div>
-			
+
 			<div id="form-control-button-div">
 				<button id="prev-btn" class="btn btn-secondary" type="button">Prev</button>
 				<button id="next-btn" class="btn btn-primary" type="button">Next</button>

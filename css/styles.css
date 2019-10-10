@@ -5,3 +5,12 @@
 .show {
     display: inline;
 }
+
+input:invalid , select:invalid, textarea:invalid {
+    border: 2px solid red;
+    background: rgba(231, 133, 133, 0.479);
+}
+
+html {
+    font-size: 1.2em;
+}
