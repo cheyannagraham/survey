@@ -1,3 +1,12 @@
+html {
+    font-size: 1.2em;
+}
+
+.helper-text {
+    display: none;
+    color: red;
+    font-style: italic;
+}
 .form-step, #prev-btn, #submit {
     display: none;
 }
@@ -11,6 +20,3 @@
     background: rgba(231, 133, 133, 0.479);
 }
 
-html {
-    font-size: 1.2em;
-}
