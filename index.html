@@ -20,7 +20,6 @@
 	<main id="main">
 		<form id="survey-form" class="form" method="POST">
 			<p id="description"><em>Describe your experience.</em></p>
-			<!-- <div id="error" class="error"></div> -->
 
 			<div class="form-step show" data-position="beg">
 				<fieldset>
@@ -196,10 +195,10 @@
 			<div class="form-step">
 				<fieldset id="learn-fieldset">
 					<legend>How did you learn how to code?</legend>
-
+					<label for="learn-div" id="learn-div-label">Select a resource<small class="required">*</small></label>
 					<div class="form-group" id="learn-div">
 						<select class="form-control" name="learn" id="dropdown" required>
-							<option value=""">Select One</option>
+							<option value="">Select One</option>
 							<option value="online">Self Taught - Online</option>
 							<option value="college">College</option>
 							<option value="job">On the Job</option>
