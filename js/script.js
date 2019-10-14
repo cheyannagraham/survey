@@ -36,34 +36,35 @@ const addEvents = () => {
 
 const isValid = e => {
 	// validate onchange
-	if (e) {
-		const helperText = e.target.nextElementSibling;
+	if (e && e.target.hasAttribute('required')) {
+		const helperText = e.target.parentElement.querySelector(".helper-text");
 
 		if (e.target.checkValidity()) {
 			e.target.classList.remove("invalid");
-			helperText.style.display = 'none';
+			if (helperText) helperText.style.display = 'none';
 			return false
 		}
 		else {
 			e.target.classList.add("invalid");
 			helperText.style.display = 'block';
-
 			return true;
 		}
 		// return e.target.reportValidity();
 	}
-	// Validate current step
-	Object.values(document.querySelectorAll('.show *[required]'))
-	.forEach(elem => {
-		if (!elem.checkValidity()) {
-			const helperText = elem.nextElementSibling;
-			elem.classList.add("invalid");
-			helperText.style.display = 'block';
+	// Validate required elements in current step
+	// Required Elements have helper text
+	if (!e) {
+		Object.values(document.querySelectorAll('.show *[required]')).forEach(elem => {
+			if (!elem.checkValidity()) {
+				const helperText = elem.parentElement.querySelector(".helper-text");
+				elem.classList.add("invalid");
+				helperText.style.display = 'block';
 
-			// elem.reportValidity();
-			return true;
-		}
-	});
+				elem.reportValidity();
+				return true;
+			}
+		});
+	}
 };
 
 const changeStep = direction => {
