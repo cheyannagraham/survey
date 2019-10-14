@@ -18,9 +18,7 @@ const addEvents = () => {
 
 	const nextBtn = document.getElementById("next-btn");
 	nextBtn.addEventListener("click", () => {
-		if (isValid()) {
-			changeStep("next");
-		}
+		if (isValid()) changeStep("next");
 	});
 
 	form = document.getElementById("survey-form");
@@ -42,35 +40,34 @@ const isValid = e => {
 		if (e.target.checkValidity()) {
 			e.target.classList.remove("invalid");
 			if (helperText) helperText.style.display = 'none';
-			return false
+			return true
 		}
 		else {
 			e.target.classList.add("invalid");
 			helperText.style.display = 'block';
-			return true;
+			return false;
 		}
-		// return e.target.reportValidity();
 	}
 	// Validate required elements in current step
 	// Required Elements have helper text
 	if (!e) {
+		let valid = true;
 		Object.values(document.querySelectorAll('.show *[required]')).forEach(elem => {
 			if (!elem.checkValidity()) {
+				valid = false;
 				const helperText = elem.parentElement.querySelector(".helper-text");
 				elem.classList.add("invalid");
 				helperText.style.display = 'block';
-
-				elem.reportValidity();
-				return true;
 			}
 		});
+		return valid;
 	}
 };
 
 const changeStep = direction => {
+	alert("h")
 	const current_step = document.querySelector("div.form-step.show");
 	const moveTo = direction == 'next' ? current_step.nextElementSibling : current_step.previousElementSibling;
-	
 	current_step.classList.remove("show");
 	moveTo.classList.add("show");
 
@@ -162,7 +159,5 @@ document.addEventListener("DOMContentLoaded", main);
 // test with out JS
 //style text in table
 // add navbar to table and form
-// I added the spans to show when forms is invalid. But i do this by selecting the next element and hiding it. 
-// this logic causes the next sibling of checkboxes and radios to "hide" becaus their next sibling is another checkbox, not a helper text div
 
 
