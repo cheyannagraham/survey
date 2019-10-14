@@ -4,10 +4,11 @@ const main = () => {
 		return this.charAt(0).toUpperCase() + this.slice(1);
 	}
 
-	Array.prototype.toCapList = function() {
-		return this.map(item => item.capitalize()).join(', ');
+	Array.prototype.toCapList = function(sep = " ") {
+		return this.map(item => item.capitalize()).join(sep);
 	}
 	addEvents();
+	showResults();
 };
 
 const addEvents = () => {
@@ -135,7 +136,7 @@ const showResults = () => {
 			<tr>
 				<td>${(result.name).split(" ").toCapList()}</td>
 				<td>${(result.focus).capitalize()}</td>
-				<td>${(result["tech-stack"]).toCapList()}</td>
+				<td>${(result["tech-stack"]).toCapList(", ")}</td>
 				<td>${(result.email).capitalize()}</td>
 				<td>${(result.comments).capitalize()}</td>
 			</tr>`
@@ -154,9 +155,6 @@ const showResults = () => {
 document.addEventListener("DOMContentLoaded", main);
 
 // DONT FORGET TO SANITIZE TEXT!!!
-// prevent values from being empty strings
-// test with out JS
-//style text in table
 // add navbar to table and form
 
 
