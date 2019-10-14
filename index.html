@@ -25,14 +25,13 @@
 			<div class="form-step show" data-position="beg">
 				<fieldset data-prev="beg" data-current="0" data-next="1">
 					<legend>Who are you?</legend>
-
 					<div class="form-group">
 						<label for="name" id="name-label">
-							Name <small class="required">*</small>
+							Full Name <small class="required">*</small>
 						</label>
 						<input class="form-control" name="name" autofocus class="left-input" type="text" id="name" pattern="\w+\s+\w+" title="Please enter a first and last name" ariadescribedby="name-helper"
 							placeholder="First Last" maxlength="50" required>
-						<span id="name-helper" class="form-text text-muted">
+						<span id="name-helper" class="form-text helper-text">
 							<small>Please enter a first and last name</small>
 						</span>
 					</div>
@@ -42,6 +41,9 @@
 							Email <small class="required">*</small>
 						</label>
 						<input class="form-control" name="email" class="left-input" type="email" id="email" placeholder="foobar@baz.com" required>
+						<span id="email-helper" class="form-text helper-text">
+							<small>Please enter a valid email address</small>
+						</span>
 					</div>
 
 					<div class="form-group">
@@ -49,6 +51,9 @@
 							Age <small class="required">*</small>
 						</label>
 						<input class="form-control" name="age" class="left-input" type="number" title="Please enter age between 3 and 110" id="number" min="3" max="150" placeholder="27" required>
+						<span id="age-helper" class="form-text helper-text">
+								<small>Please enter your age</small>
+							</span>
 					</div>
 
 					<div class="form-group">
@@ -56,6 +61,9 @@
 							Years Experience <small class="required">*</small>
 						</label>
 						<input class="form-control" name="xp" class="left-input" type="number" id="experience" min="0" max="70" placeholder="5" required>
+						<span id="name-helper" class="form-text helper-text">
+							<small>Please enter your years of experience</small>
+						</span>
 					</div>
 
 				</fieldset>
@@ -196,6 +204,9 @@
 							<option value="job">On the Job</option>
 							<option value="bootcamp">Bootcamp</option>
 						</select>
+						<span id="name-helper" class="form-text helper-text">
+							<small>Please choose an option</small>
+						</span>
 					</div>
 
 				</fieldset>
@@ -204,7 +215,7 @@
 			<div class="form-step show show" data-position="end">
 				<fieldset>
 					<legend>Anything else?</legend>
-					<textarea class="form-control" placeholder="Additional Comments" name="comments" id="comments" cols="30" rows="10" required></textarea>
+					<textarea class="form-control" placeholder="Additional Comments" name="comments" id="comments" cols="30" rows="10"></textarea>
 				</fieldset>
 			</div>
 
