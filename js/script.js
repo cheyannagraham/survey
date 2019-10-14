@@ -4,11 +4,14 @@ const main = () => {
 		return this.charAt(0).toUpperCase() + this.slice(1);
 	}
 
+	String.prototype.sanitize = function() {
+		return this.replace(/[</${()}[]|`]/g, "");
+	}
+
 	Array.prototype.toCapList = function(sep = " ") {
 		return this.map(item => item.capitalize()).join(sep);
 	}
 	addEvents();
-	showResults();
 };
 
 const addEvents = () => {
@@ -98,7 +101,7 @@ const formSubmit = (form) => {
 		focus : Object.values(form.querySelectorAll("input[name=focus]")).filter(elem => elem.checked)[0].value,
 		'tech-stack' : Object.values(form.querySelectorAll("input[name=tech-stack]")).filter(elem => elem.checked).map(elem => elem.value),
 		learn : form.querySelector("#dropdown").value,
-		comments : form.querySelector("#comments").value,
+		comments : form.querySelector("#comments").value.sanitize(),
 	};
 	saveFormValues(formValues);
 	showResults();
@@ -147,14 +150,11 @@ const showResults = () => {
 	</div>`;
 
 	document.querySelector("#main").innerHTML = table;
-
 }
-
 
 //add events after the dom is ready
 document.addEventListener("DOMContentLoaded", main);
 
-// DONT FORGET TO SANITIZE TEXT!!!
 // add navbar to table and form
 
 
