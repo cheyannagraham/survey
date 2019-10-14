@@ -20,16 +20,17 @@
 	<main id="main">
 		<form id="survey-form" class="form" method="POST">
 			<p id="description"><em>Describe your experience.</em></p>
-			<div id="error" class="error"></div>
+			<!-- <div id="error" class="error"></div> -->
 
 			<div class="form-step show" data-position="beg">
-				<fieldset data-prev="beg" data-current="0" data-next="1">
+				<fieldset>
 					<legend>Who are you?</legend>
+					
 					<div class="form-group">
 						<label for="name" id="name-label">
 							Full Name <small class="required">*</small>
 						</label>
-						<input class="form-control" name="name" autofocus class="left-input" type="text" id="name" pattern="\w+\s+\w+" title="Please enter a first and last name" ariadescribedby="name-helper"
+						<input class="form-control" name="name" autofocus class="left-input" type="text" id="name" pattern="\w+\s+\w+" ariadescribedby="name-helper"
 							placeholder="First Last" maxlength="50" required>
 						<span id="name-helper" class="form-text helper-text">
 							<small>Please enter a first and last name</small>
@@ -50,17 +51,17 @@
 						<label for="number" id="number-label">
 							Age <small class="required">*</small>
 						</label>
-						<input class="form-control" name="age" class="left-input" type="number" title="Please enter age between 3 and 110" id="number" min="3" max="150" placeholder="27" required>
+						<input class="form-control" name="age" class="left-input" type="number" id="number" min="3" max="150" placeholder="27" required>
 						<span id="age-helper" class="form-text helper-text">
-								<small>Please enter your age</small>
-							</span>
+							<small>Please enter your age</small>
+						</span>
 					</div>
 
 					<div class="form-group">
 						<label for="experience" id="experience-label">
 							Years Experience <small class="required">*</small>
 						</label>
-						<input class="form-control" name="xp" class="left-input" type="number" id="experience" min="0" max="70" placeholder="5" required>
+						<input class="form-control" name="xp" class="left-input" type="number" id="experience" min="0" max="100" placeholder="5" required>
 						<span id="name-helper" class="form-text helper-text">
 							<small>Please enter your years of experience</small>
 						</span>
@@ -74,17 +75,17 @@
 					<legend>What is your focus?</legend>
 
 					<div id="focus-div">
-						<div class="focus-label form-check">
+						<div class="form-check">
 							<input class="form-check-input" id="frontend" type="radio" value="frontend" name="focus" required checked>
 							<label class="form-check-label" for="frontend">Frontend</label>
 						</div>
 
-						<div class="focus-label form-check">
+						<div class="form-check">
 							<input class="form-check-input" id="backend" type="radio" value="backend" name="focus" required>
 							<label class="form-check-label" for="backend">Backend</label>
 						</div>
 
-						<div class="focus-label form-check">
+						<div class="form-check">
 							<input class="form-check-input" id="fullstack" type="radio" value="fullstack" name="focus" required>
 							<label class="form-check-label" for="fullstack">Fullstack</label>
 						</div>
