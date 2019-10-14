@@ -36,17 +36,26 @@ const addEvents = () => {
 
 const isValid = e => {
 	// validate onchange
-	if (e && e.target.checkValidity()) {
-		return e.target.reportValidity();
-	}
-	// Validate current step
-	return (!Object.values(document.querySelectorAll('.show *[required]'))
-	.some(elem => {
-		if (!elem.checkValidity()) {
-			elem.reportValidity();
+	if (e) {
+		if (e.target.checkValidity()) {
+			e.target.classList.remove("invalid");
+			return valse
+		}
+		else {
+			e.target.classList.add("invalid");
 			return true;
 		}
-	}));
+		// return e.target.reportValidity();
+	}
+	// Validate current step
+	Object.values(document.querySelectorAll('.show *[required]'))
+	.forEach(elem => {
+		if (!elem.checkValidity()) {
+			elem.classList.add("invalid");
+			// elem.reportValidity();
+			return true;
+		}
+	});
 };
 
 const changeStep = direction => {

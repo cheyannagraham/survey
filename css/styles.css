@@ -6,7 +6,7 @@
     display: inline;
 }
 
-input:invalid , select:invalid, textarea:invalid {
+.invalid {
     border: 2px solid red;
     background: rgba(231, 133, 133, 0.479);
 }
