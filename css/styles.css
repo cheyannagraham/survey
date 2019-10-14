@@ -2,6 +2,15 @@ html {
     font-size: 1.2em;
 }
 
+.form-step {
+    margin: 15px auto;
+    padding: 10px;
+}
+
+.form-check {
+    padding-bottom: 15px;
+}
+
 .helper-text {
     display: none;
     color: red;
@@ -12,11 +21,20 @@ html {
 }
 
 .show {
-    display: inline;
+    display: block;
 }
 
 .invalid {
-    border: 2px solid red;
-    background: rgba(231, 133, 133, 0.479);
+    border: 1px solid red;
+    background: rgba(231, 133, 133, 0.137);
+}
+
+#tech-stack-div, #focus-div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px,1fr));
+}
+
+label {
+    cursor: pointer;
 }
 

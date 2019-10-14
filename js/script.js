@@ -65,7 +65,6 @@ const isValid = e => {
 };
 
 const changeStep = direction => {
-	alert("h")
 	const current_step = document.querySelector("div.form-step.show");
 	const moveTo = direction == 'next' ? current_step.nextElementSibling : current_step.previousElementSibling;
 	current_step.classList.remove("show");
