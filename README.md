@@ -1,3 +1,3 @@
 # [Developer Survey](https://cheyannagraham.github.io/survey)
 
-Form survey created with CSS/JS
+Multi-Step form survey with custom validation created with CSS/JS and bootstrap 4 styles

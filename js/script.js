@@ -1,127 +1,131 @@
 const main = () => {
-	// https://flaviocopes.com/how-to-uppercase-first-letter-javascript/
-	String.prototype.capitalize = function() {
-		return this.charAt(0).toUpperCase() + this.slice(1);
-	}
+  // https://flaviocopes.com/how-to-uppercase-first-letter-javascript/
+  String.prototype.capitalize = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1);
+  };
 
-	String.prototype.sanitize = function() {
-		return this.replace(/[</${()}[]|`]/g, "");
-	}
+  String.prototype.sanitize = function() {
+    return this.replace(/[</${()}[]|`]/g, "");
+  };
 
-	Array.prototype.toCapList = function(sep = " ") {
-		return this.map(item => item.capitalize()).join(sep);
-	}
-	addEvents();
+  Array.prototype.toCapList = function(sep = " ") {
+    return this.map(item => item.capitalize()).join(sep);
+  };
+  addEvents();
 };
 
 const addEvents = () => {
-	const prevBtn = document.getElementById("prev-btn");
-	prevBtn.addEventListener("click", () => {
-			changeStep("prev");
-	});
+  const prevBtn = document.getElementById("prev-btn");
+  prevBtn.addEventListener("click", () => {
+    changeStep("prev");
+  });
 
-	const nextBtn = document.getElementById("next-btn");
-	nextBtn.addEventListener("click", () => {
-		if (isValid()) changeStep("next");
-	});
+  const nextBtn = document.getElementById("next-btn");
+  nextBtn.addEventListener("click", () => {
+    isValid() && changeStep("next");
+  });
 
-	form = document.getElementById("survey-form");
-	form.addEventListener("submit", e => {
-		e.preventDefault();
-		isValid() && formSubmit(form);
-	});
+  form = document.getElementById("survey-form");
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    isValid() && formSubmit(form);
+  });
 
-	form.addEventListener("change", e => {
-		isValid(e);
-	});
+  form.addEventListener("change", e => {
+    isValid(e);
+  });
 };
 
 const isValid = e => {
-	// validate onchange
-	if (e && e.target.hasAttribute('required')) {
-		const helperText = e.target.parentElement.querySelector(".helper-text");
+  // validate onchange
+  if (e && e.target.hasAttribute("required")) {
+    const helperText = e.target.parentElement.querySelector(".helper-text");
 
-		if (e.target.checkValidity()) {
-			e.target.classList.remove("invalid");
-			if (helperText) helperText.style.display = 'none';
-			return true
-		}
-		else {
-			e.target.classList.add("invalid");
-			helperText.style.display = 'block';
-			return false;
-		}
-	}
-	// Validate required elements in current step
-	// Required Elements have helper text
-	if (!e) {
-		let valid = true;
-		Object.values(document.querySelectorAll('.show *[required]')).forEach(elem => {
-			if (!elem.checkValidity()) {
-				valid = false;
-				const helperText = elem.parentElement.querySelector(".helper-text");
-				elem.classList.add("invalid");
-				helperText.style.display = 'block';
-			}
-		});
-		return valid;
-	}
+    if (e.target.checkValidity()) {
+      e.target.classList.remove("invalid");
+      if (helperText) helperText.style.display = "none";
+      return true;
+    } else {
+      e.target.classList.add("invalid");
+      helperText.style.display = "block";
+      return false;
+    }
+  }
+  // Validate required elements in current step
+  // Required Elements have helper text
+  if (!e) {
+    let valid = true;
+    Object.values(document.querySelectorAll(".show *[required]")).forEach(
+      elem => {
+        if (!elem.checkValidity()) {
+          valid = false;
+          const helperText = elem.parentElement.querySelector(".helper-text");
+          elem.classList.add("invalid");
+          helperText.style.display = "block";
+        }
+      }
+    );
+    return valid;
+  }
 };
 
 const changeStep = direction => {
-	const current_step = document.querySelector("div.form-step.show");
-	const moveTo = direction == 'next' ? current_step.nextElementSibling : current_step.previousElementSibling;
-	current_step.classList.remove("show");
-	moveTo.classList.add("show");
+  const current_step = document.querySelector("div.form-step.show");
+  const moveTo =
+    direction == "next"
+      ? current_step.nextElementSibling
+      : current_step.previousElementSibling;
+  current_step.classList.remove("show");
+  moveTo.classList.add("show");
 
-	// Hide and show next, submit, prev buttons
-	if (moveTo.getAttribute("data-position") != "beg") {
-		document.getElementById('prev-btn').style.display = 'inline';
-	}
-	else {
-		document.getElementById('prev-btn').style.display = 'none';
-	}
-	if (moveTo.getAttribute("data-position") == "end") {
-		document.getElementById('submit').style.display = 'inline';
-		document.getElementById('next-btn').style.display = 'none';
-	}
-	else {
-		document.getElementById('submit').style.display = 'none';
-		document.getElementById('next-btn').style.display = 'inline';
-	}
+  // Hide and show next, submit, prev buttons
+  if (moveTo.getAttribute("data-position") != "beg") {
+    document.getElementById("prev-btn").style.display = "inline";
+  } else {
+    document.getElementById("prev-btn").style.display = "none";
+  }
+  if (moveTo.getAttribute("data-position") == "end") {
+    document.getElementById("submit").style.display = "inline";
+    document.getElementById("next-btn").style.display = "none";
+  } else {
+    document.getElementById("submit").style.display = "none";
+    document.getElementById("next-btn").style.display = "inline";
+  }
 };
 
-const formSubmit = (form) => {
-	changeStep('next');
-	const formValues = {
-		name : form.querySelector("#name").value,
-		email : form.querySelector("#email").value,
-		age : form.querySelector("#number").value,
-		experience : form.querySelector("#experience").value,
-		focus : Object.values(form.querySelectorAll("input[name=focus]")).filter(elem => elem.checked)[0].value,
-		'tech-stack' : Object.values(form.querySelectorAll("input[name=tech-stack]")).filter(elem => elem.checked).map(elem => elem.value),
-		learn : form.querySelector("#dropdown").value,
-		comments : form.querySelector("#comments").value.sanitize(),
-	};
-	saveFormValues(formValues);
-	showResults();
+const formSubmit = form => {
+  const formValues = {
+    name: form.querySelector("#name").value.split(" ").toCapList(),
+    email: form.querySelector("#email").value.capitalize(),
+    age: form.querySelector("#number").value,
+    experience: form.querySelector("#experience").value,
+    focus: Object.values(form.querySelectorAll("input[name=focus]")).filter(
+      elem => elem.checked
+    )[0].value.capitalize(),
+    "tech-stack": Object.values(form.querySelectorAll("input[name=tech-stack]"))
+      .filter(elem => elem.checked)
+      .map(elem => elem.value).toCapList(", "),
+    learn: form.querySelector("#dropdown").value,
+    comments: form.querySelector("#comments").value.sanitize().capitalize()
+  };
+  saveFormValues(formValues);
+  showResults();
 };
 
-const saveFormValues = (formValues) => {
-	const formResults = JSON.parse(localStorage.getItem("survey-form-results"));
+const saveFormValues = formValues => {
+  const formResults = JSON.parse(localStorage.getItem("survey-form-results"));
 
-	if (formResults) {
-		formResults.push(formValues);
-		localStorage.setItem("survey-form-results", JSON.stringify(formResults));
-	}
-	else {
-		localStorage.setItem("survey-form-results", JSON.stringify([formValues]));
-	}
-}
+  if (formResults) {
+    formResults.push(formValues);
+    localStorage.setItem("survey-form-results", JSON.stringify(formResults));
+  } else {
+    localStorage.setItem("survey-form-results", JSON.stringify([formValues]));
+  }
+};
 
 const showResults = () => {
-	const formResults = JSON.parse(localStorage.getItem("survey-form-results"));
-	let table = `
+  const formResults = JSON.parse(localStorage.getItem("survey-form-results"));
+  let table = `
 	<div class="table-responsive">
 		<table class="table table-striped table-bordered">
 			<thead class="thead-light">
@@ -133,28 +137,23 @@ const showResults = () => {
 			</thead>
 			<tbody>`;
 
-	for (result of formResults)
-	{
-		table += `
+  for (result of formResults) {
+    table += `
 			<tr>
-				<td>${(result.name).split(" ").toCapList()}</td>
-				<td>${(result.focus).capitalize()}</td>
-				<td>${(result["tech-stack"]).toCapList(", ")}</td>
-				<td>${(result.email).capitalize()}</td>
-				<td>${(result.comments).capitalize()}</td>
-			</tr>`
-	}
-	table += `
+				<td>${result.name}</td>
+				<td>${result.focus}</td>
+				<td>${result["tech-stack"]}</td>
+				<td>${result.email}</td>
+				<td>${result.comments}</td>
+			</tr>`;
+  }
+  table += `
 			</tbody>
 		</table>
 	</div>`;
 
-	document.querySelector("#main").innerHTML = table;
-}
+  document.querySelector("#main").innerHTML = table;
+};
 
 //add events after the dom is ready
 document.addEventListener("DOMContentLoaded", main);
-
-// add navbar to table and form
-
-

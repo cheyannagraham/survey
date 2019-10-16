@@ -13,24 +13,25 @@
 
 <body class="container">
 	<header>
-		<h1 id="title" class="display-1">Developer Survey</h1>
+		<h1 id="title">Developer Survey</h1>
 	</header>
 	<hr>
 
 	<main id="main">
 		<form id="survey-form" class="form" method="POST">
-			<p id="description"><em>Describe your experience.</em></p>
+			<p><em>Describe your experience.</em></p>
 
 			<div class="form-step show" data-position="beg">
 				<fieldset>
 					<legend>Who are you?</legend>
-					
+
 					<div class="form-group">
 						<label for="name" id="name-label">
 							Full Name <small class="required">*</small>
 						</label>
-						<input class="form-control" name="name" autofocus class="left-input" type="text" id="name" pattern="\w+\s+\w+" ariadescribedby="name-helper"
-							placeholder="First Last" maxlength="50" required>
+						<input class="form-control" name="name" autofocus type="text" id="name"
+							pattern="\w+\s+\w+" ariadescribedby="name-helper" placeholder="First Last" maxlength="50"
+							required>
 						<span id="name-helper" class="form-text helper-text">
 							<small>Please enter a first and last name</small>
 						</span>
@@ -40,7 +41,8 @@
 						<label for="email" id="email-label">
 							Email <small class="required">*</small>
 						</label>
-						<input class="form-control" name="email" class="left-input" type="email" id="email" placeholder="foobar@baz.com" ariadescribedby="email-helper" required>
+						<input class="form-control" name="email" type="email" id="email"
+							placeholder="foobar@baz.com" ariadescribedby="email-helper" required>
 						<span id="email-helper" class="form-text helper-text">
 							<small>Please enter a valid email address</small>
 						</span>
@@ -50,7 +52,8 @@
 						<label for="number" id="number-label">
 							Age <small class="required">*</small>
 						</label>
-						<input class="form-control" name="age" class="left-input" type="number" id="number" min="3" max="150" placeholder="27" ariadescribedby="age-helper" required>
+						<input class="form-control" name="age" type="number" id="number" min="3"
+							max="150" placeholder="27" ariadescribedby="age-helper" required>
 						<span id="age-helper" class="form-text helper-text">
 							<small>Please enter your age</small>
 						</span>
@@ -60,7 +63,8 @@
 						<label for="experience" id="experience-label">
 							Years Experience <small class="required">*</small>
 						</label>
-						<input class="form-control" name="xp" class="left-input" type="number" id="experience" min="0" max="100" placeholder="5" ariadescribedby="experience-helper" required>
+						<input class="form-control" name="xp" type="number" id="experience" min="0"
+							max="100" placeholder="5" ariadescribedby="experience-helper" required>
 						<span id="experience-helper" class="form-text helper-text">
 							<small>Please enter your years of experience</small>
 						</span>
@@ -70,22 +74,25 @@
 			</div>
 
 			<div class="form-step">
-				<fieldset id="focus-fieldset">
+				<fieldset>
 					<legend>What is your focus?</legend>
 
-					<div id="focus-div">
+					<div class="grid-display">
 						<div class="form-check">
-							<input class="form-check-input" id="frontend" type="radio" value="frontend" name="focus" required checked>
+							<input class="form-check-input" id="frontend" type="radio" value="frontend" name="focus"
+								required checked>
 							<label class="form-check-label" for="frontend">Frontend</label>
 						</div>
 
 						<div class="form-check">
-							<input class="form-check-input" id="backend" type="radio" value="backend" name="focus" required>
+							<input class="form-check-input" id="backend" type="radio" value="backend" name="focus"
+								required>
 							<label class="form-check-label" for="backend">Backend</label>
 						</div>
 
 						<div class="form-check">
-							<input class="form-check-input" id="fullstack" type="radio" value="fullstack" name="focus" required>
+							<input class="form-check-input" id="fullstack" type="radio" value="fullstack" name="focus"
+								required>
 							<label class="form-check-label" for="fullstack">Fullstack</label>
 						</div>
 					</div>
@@ -93,10 +100,10 @@
 			</div>
 
 			<div class="form-step">
-				<fieldset id="tech-stack-fieldset">
+				<fieldset>
 					<legend>What's your tech stack?</legend>
 
-					<div id="tech-stack-div">
+					<div class="grid-display">
 
 						<div class="form-check">
 							<input id="react" class="form-check-input" type="checkbox" name="tech-stack" value="react">
@@ -105,7 +112,8 @@
 
 
 						<div class="form-check">
-							<input id="nodejs" class="form-check-input" type="checkbox" name="tech-stack" value="nodejs">
+							<input id="nodejs" class="form-check-input" type="checkbox" name="tech-stack"
+								value="nodejs">
 							<label for="nodejs" class="form-check-label">NodeJs</label>
 						</div>
 
@@ -115,7 +123,8 @@
 						</div>
 
 						<div class="form-check">
-							<input id="jquery" class="form-check-input" type="checkbox" name="tech-stack" value="jquery">
+							<input id="jquery" class="form-check-input" type="checkbox" name="tech-stack"
+								value="jquery">
 							<label for="jquery" class="form-check-label">JQuery</label>
 						</div>
 
@@ -130,17 +139,20 @@
 						</div>
 
 						<div class="form-check">
-							<input id="postgress" class="form-check-input" type="checkbox" name="tech-stack" value="postgress">
+							<input id="postgress" class="form-check-input" type="checkbox" name="tech-stack"
+								value="postgress">
 							<label for="postgress" class="form-check-label">Postgress</label>
 						</div>
 
 						<div class="form-check">
-							<input id="python" class="form-check-input" type="checkbox" name="tech-stack" value="python">
+							<input id="python" class="form-check-input" type="checkbox" name="tech-stack"
+								value="python">
 							<label for="python" class="form-check-label">Python</label>
 						</div>
 
 						<div class="form-check">
-							<input id="javascript" class="form-check-input" type="checkbox" name="tech-stack" value="javascript">
+							<input id="javascript" class="form-check-input" type="checkbox" name="tech-stack"
+								value="javascript">
 							<label for="javascript" class="form-check-label">Javascript</label>
 						</div>
 
@@ -150,7 +162,8 @@
 						</div>
 
 						<div class="form-check">
-							<input id="mongodb" class="form-check-input" type="checkbox" name="tech-stack" value="mongodb">
+							<input id="mongodb" class="form-check-input" type="checkbox" name="tech-stack"
+								value="mongodb">
 							<label for="mongodb" class="form-check-label">MongoDB</label>
 						</div>
 
@@ -160,12 +173,14 @@
 						</div>
 
 						<div class="form-check">
-							<input id="rubyrails" class="form-check-input" type="checkbox" name="tech-stack" value="rubyrails">
+							<input id="rubyrails" class="form-check-input" type="checkbox" name="tech-stack"
+								value="rubyrails">
 							<label for="rubyrails" class="form-check-label">RubyRails</label>
 						</div>
 
 						<div class="form-check">
-							<input id="django" class="form-check-input" type="checkbox" name="tech-stack" value="django">
+							<input id="django" class="form-check-input" type="checkbox" name="tech-stack"
+								value="django">
 							<label for="django" class="form-check-label">Django</label>
 						</div>
 
@@ -175,7 +190,8 @@
 						</div>
 
 						<div class="form-check">
-							<input id="webpack" class="form-check-input" type="checkbox" name="tech-stack" value="webpack">
+							<input id="webpack" class="form-check-input" type="checkbox" name="tech-stack"
+								value="webpack">
 							<label for="webpack" class="form-check-label">Webpack</label>
 						</div>
 
@@ -193,10 +209,11 @@
 			</div>
 
 			<div class="form-step">
-				<fieldset id="learn-fieldset">
+				<fieldset>
 					<legend>How did you learn how to code?</legend>
-					<div class="form-group" id="learn-div">
-						<label for="dropdown" id="dropdown-label">Select a resource<small class="required">*</small></label>
+					<div class="form-group">
+						<label for="dropdown" id="dropdown-label">Select a resource<small
+								class="required">*</small></label>
 						<select class="form-control" name="learn" id="dropdown" required>
 							<option value="">Select One</option>
 							<option value="online">Self Taught - Online</option>
@@ -212,14 +229,15 @@
 				</fieldset>
 			</div>
 
-			<div class="form-step " data-position="end">
+			<div class="form-step" data-position="end">
 				<fieldset>
 					<legend>Anything else?</legend>
-					<textarea class="form-control" placeholder="Additional Comments" name="comments" id="comments" cols="30" rows="10"></textarea>
+					<textarea class="form-control" placeholder="Additional Comments" name="comments" id="comments"
+						cols="30" rows="10"></textarea>
 				</fieldset>
 			</div>
 
-			<div id="form-control-button-div">
+			<div>
 				<button id="prev-btn" class="btn btn-secondary" type="button">Prev</button>
 				<button id="next-btn" class="btn btn-primary" type="button">Next</button>
 				<button id="submit" class="btn btn-primary" type="submit">Submit</button>

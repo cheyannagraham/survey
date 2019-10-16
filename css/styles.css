@@ -1,5 +1,6 @@
 html {
     font-size: 1.2em;
+    margin-bottom: 15px;
 }
 
 .form-step {
@@ -29,7 +30,7 @@ html {
     background: rgba(231, 133, 133, 0.137);
 }
 
-#tech-stack-div, #focus-div {
+.grid-display {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px,1fr));
 }
