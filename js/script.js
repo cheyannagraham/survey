@@ -122,7 +122,7 @@ const formSubmit = (form) => {
       .filter((elem) => elem.checked)
       .map((elem) => elem.value)
       .toCapList(", "),
-    learn: form.querySelector("#dropdown").value,
+    education: form.querySelector("#education").value,
     comments: form.querySelector("#comments").value.sanitize().capitalize(),
   };
   saveFormValues(formValues);
