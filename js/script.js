@@ -25,6 +25,12 @@ const addEvents = () => {
     isValid() && changeStep("next");
   });
 
+  const resetBtn = document.getElementById("reset-data-btn");
+  resetBtn.addEventListener("click", () => {
+    localStorage.removeItem("survey-form-results");
+    showResults();
+  });
+
   const form = document.getElementById("survey-form");
   form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -136,18 +142,21 @@ const saveFormValues = (formValues) => {
 
 const showResults = () => {
   const formResults = JSON.parse(localStorage.getItem("survey-form-results"));
-  console.log(formResults);
 
-  tableBody = formResults.map(
-    (result) =>
-      `<tr>
-      <td>${result.name}</td>
-      <td>${result.focus}</td>
-      <td>${result["tech-stack"]}</td>
-      <td>${result.email}</td>
-      <td>${result.comments}</td>
-    </tr>`
-  ).join('');
+  tableBody = formResults
+    ? formResults
+        .map(
+          (result) =>
+            `<tr>
+              <td>${result.name}</td>
+              <td>${result.focus}</td>
+              <td>${result["tech-stack"]}</td>
+              <td>${result.email}</td>
+              <td>${result.comments}</td>
+            </tr>`
+        )
+        .join("")
+    : [];
 
   document.getElementById("survey-form").style.display = "none";
   document.getElementById("table-div").style.display = "block";

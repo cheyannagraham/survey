@@ -20,7 +20,7 @@ html {
 
 .form-step,
 #prev-btn,
-#table-div, 
+#table-div,
 #submit {
     display: none;
 }
