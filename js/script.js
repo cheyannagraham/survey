@@ -1,15 +1,15 @@
 const main = () => {
   // https://flaviocopes.com/how-to-uppercase-first-letter-javascript/
-  String.prototype.capitalize = function() {
+  String.prototype.capitalize = function () {
     return this.charAt(0).toUpperCase() + this.slice(1);
   };
 
-  String.prototype.sanitize = function() {
+  String.prototype.sanitize = function () {
     return this.replace(/[</${()}[]|`]/g, "");
   };
 
-  Array.prototype.toCapList = function(sep = " ") {
-    return this.map(item => item.capitalize()).join(sep);
+  Array.prototype.toCapList = function (sep = " ") {
+    return this.map((item) => item.capitalize()).join(sep);
   };
   addEvents();
 };
@@ -25,18 +25,26 @@ const addEvents = () => {
     isValid() && changeStep("next");
   });
 
-  form = document.getElementById("survey-form");
-  form.addEventListener("submit", e => {
+  const form = document.getElementById("survey-form");
+  form.addEventListener("submit", (e) => {
     e.preventDefault();
     isValid() && formSubmit(form);
   });
 
-  form.addEventListener("change", e => {
+  form.addEventListener("change", (e) => {
     isValid(e);
+  });
+
+  const retakeBtn = document.getElementById("retake-btn");
+  retakeBtn.addEventListener("click", () => {
+    form.style.display = "block";
+    form.reset();
+    document.getElementById("table-div").style.display = "none";
+    changeStep("start");
   });
 };
 
-const isValid = e => {
+const isValid = (e) => {
   // validate onchange
   if (e && e.target.hasAttribute("required")) {
     const helperText = e.target.parentElement.querySelector(".helper-text");
@@ -56,7 +64,7 @@ const isValid = e => {
   if (!e) {
     let valid = true;
     Object.values(document.querySelectorAll(".show *[required]")).forEach(
-      elem => {
+      (elem) => {
         if (!elem.checkValidity()) {
           valid = false;
           const helperText = elem.parentElement.querySelector(".helper-text");
@@ -69,10 +77,12 @@ const isValid = e => {
   }
 };
 
-const changeStep = direction => {
+const changeStep = (direction) => {
   const current_step = document.querySelector("div.form-step.show");
   const moveTo =
-    direction == "next"
+    direction == "start"
+      ? document.getElementById("survey-form").querySelector(".form-step")
+      : direction == "next"
       ? current_step.nextElementSibling
       : current_step.previousElementSibling;
   current_step.classList.remove("show");
@@ -93,26 +103,27 @@ const changeStep = direction => {
   }
 };
 
-const formSubmit = form => {
+const formSubmit = (form) => {
   const formValues = {
     name: form.querySelector("#name").value.split(" ").toCapList(),
     email: form.querySelector("#email").value.capitalize(),
     age: form.querySelector("#number").value,
     experience: form.querySelector("#experience").value,
-    focus: Object.values(form.querySelectorAll("input[name=focus]")).filter(
-      elem => elem.checked
-    )[0].value.capitalize(),
+    focus: Object.values(form.querySelectorAll("input[name=focus]"))
+      .filter((elem) => elem.checked)[0]
+      .value.capitalize(),
     "tech-stack": Object.values(form.querySelectorAll("input[name=tech-stack]"))
-      .filter(elem => elem.checked)
-      .map(elem => elem.value).toCapList(", "),
+      .filter((elem) => elem.checked)
+      .map((elem) => elem.value)
+      .toCapList(", "),
     learn: form.querySelector("#dropdown").value,
-    comments: form.querySelector("#comments").value.sanitize().capitalize()
+    comments: form.querySelector("#comments").value.sanitize().capitalize(),
   };
   saveFormValues(formValues);
   showResults();
 };
 
-const saveFormValues = formValues => {
+const saveFormValues = (formValues) => {
   const formResults = JSON.parse(localStorage.getItem("survey-form-results"));
 
   if (formResults) {
@@ -125,34 +136,22 @@ const saveFormValues = formValues => {
 
 const showResults = () => {
   const formResults = JSON.parse(localStorage.getItem("survey-form-results"));
-  let table = `
-	<div class="table-responsive">
-		<table class="table table-striped table-bordered">
-			<thead class="thead-light">
-				<th>Name</th>
-				<th>Experience</th>
-				<th>Skills</th>
-				<th>Contact</th>
-				<th>Comments</th>
-			</thead>
-			<tbody>`;
+  console.log(formResults);
 
-  for (result of formResults) {
-    table += `
-			<tr>
-				<td>${result.name}</td>
-				<td>${result.focus}</td>
-				<td>${result["tech-stack"]}</td>
-				<td>${result.email}</td>
-				<td>${result.comments}</td>
-			</tr>`;
-  }
-  table += `
-			</tbody>
-		</table>
-	</div>`;
+  tableBody = formResults.map(
+    (result) =>
+      `<tr>
+      <td>${result.name}</td>
+      <td>${result.focus}</td>
+      <td>${result["tech-stack"]}</td>
+      <td>${result.email}</td>
+      <td>${result.comments}</td>
+    </tr>`
+  ).join('');
 
-  document.querySelector("#main").innerHTML = table;
+  document.getElementById("survey-form").style.display = "none";
+  document.getElementById("table-div").style.display = "block";
+  document.getElementById("table-body").innerHTML = tableBody;
 };
 
 //add events after the dom is ready

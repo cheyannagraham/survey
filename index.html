@@ -29,9 +29,8 @@
 						<label for="name" id="name-label">
 							Full Name <small class="required">*</small>
 						</label>
-						<input class="form-control" name="name" autofocus type="text" id="name"
-							pattern="\w+\s+\w+" ariadescribedby="name-helper" placeholder="First Last" maxlength="50"
-							required>
+						<input class="form-control" name="name" autofocus type="text" id="name" pattern="\w+\s+\w+"
+							ariadescribedby="name-helper" placeholder="First Last" maxlength="50" required>
 						<span id="name-helper" class="form-text helper-text">
 							<small>Please enter a first and last name</small>
 						</span>
@@ -41,8 +40,8 @@
 						<label for="email" id="email-label">
 							Email <small class="required">*</small>
 						</label>
-						<input class="form-control" name="email" type="email" id="email"
-							placeholder="foobar@baz.com" ariadescribedby="email-helper" required>
+						<input class="form-control" name="email" type="email" id="email" placeholder="foobar@baz.com"
+							ariadescribedby="email-helper" required>
 						<span id="email-helper" class="form-text helper-text">
 							<small>Please enter a valid email address</small>
 						</span>
@@ -52,8 +51,8 @@
 						<label for="number" id="number-label">
 							Age <small class="required">*</small>
 						</label>
-						<input class="form-control" name="age" type="number" id="number" min="3"
-							max="150" placeholder="27" ariadescribedby="age-helper" required>
+						<input class="form-control" name="age" type="number" id="number" min="3" max="150"
+							placeholder="27" ariadescribedby="age-helper" required>
 						<span id="age-helper" class="form-text helper-text">
 							<small>Please enter your age</small>
 						</span>
@@ -63,8 +62,8 @@
 						<label for="experience" id="experience-label">
 							Years Experience <small class="required">*</small>
 						</label>
-						<input class="form-control" name="xp" type="number" id="experience" min="0"
-							max="100" placeholder="5" ariadescribedby="experience-helper" required>
+						<input class="form-control" name="xp" type="number" id="experience" min="0" max="100"
+							placeholder="5" ariadescribedby="experience-helper" required>
 						<span id="experience-helper" class="form-text helper-text">
 							<small>Please enter your years of experience</small>
 						</span>
@@ -237,12 +236,32 @@
 				</fieldset>
 			</div>
 
-			<div>
+			<div id="btn-section">
+				<p><em><small>* Required</small></em></p>
 				<button id="prev-btn" class="btn btn-secondary" type="button">Prev</button>
 				<button id="next-btn" class="btn btn-primary" type="button">Next</button>
 				<button id="submit" class="btn btn-primary" type="submit">Submit</button>
+
 			</div>
 		</form>
+
+		<div id="table-div" class="">
+			<div class="table-responsive">
+				<table class="table table-striped table-bordered">
+					<thead class="thead-light">
+						<th>Name</th>
+						<th>Experience</th>
+						<th>Skills</th>
+						<th>Contact</th>
+						<th>Comments</th>
+					</thead>
+					<tbody id="table-body">
+
+					</tbody>
+				</table>
+			</div>
+			<button id="retake-btn" class="btn btn-primary" type="submit">Retake Survey</button>
+		</div>
 	</main>
 	<!-- FCC test script -->
 	<!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->

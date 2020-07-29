@@ -17,12 +17,20 @@ html {
     color: red;
     font-style: italic;
 }
-.form-step, #prev-btn, #submit {
+
+.form-step,
+#prev-btn,
+#table-div, 
+#submit {
     display: none;
 }
 
 .show {
     display: block;
+}
+
+.hide {
+    display: none;
 }
 
 .invalid {
@@ -32,10 +40,9 @@ html {
 
 .grid-display {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px,1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 }
 
 label {
     cursor: pointer;
 }
-
